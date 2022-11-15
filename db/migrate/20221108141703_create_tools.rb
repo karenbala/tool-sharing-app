@@ -3,6 +3,7 @@ class CreateTools < ActiveRecord::Migration[5.2]
     create_table :tools do |t|
       t.string :power_type, null: false
       t.string :name, null:false
+      t.text :image_url, null:false
       t.string :product
       t.string :brand
       t.string :size

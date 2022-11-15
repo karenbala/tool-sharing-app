@@ -32,7 +32,7 @@ user_2 = User.create(
 
 user_3 = User.create(
   first_name: "Dan",
-  last_name: "Boder",
+  last_name: "Broder",
   address: "35 Lowell Street",
   city: "South Portland",
   state: "Maine",
@@ -45,6 +45,7 @@ user_3 = User.create(
 tool_1 = Tool.find_or_create_by(
   power_type: "Hand Tool",
   name: "Screwdriver",
+  image_url: "https://www.truevalue.com/media/catalog/product/204015.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700",
   product: "Philips head",
   brand: "Stanley",
   size: "4 inches",
@@ -56,6 +57,7 @@ tool_1 = Tool.find_or_create_by(
 tool_2 = Tool.find_or_create_by(
   power_type: "Hand Tool",
   name: "Hammer",
+  image_url: "https://images.thdstatic.com/productImages/b42731ad-1c27-463d-b706-6c12ce1aa696/svn/milwaukee-framing-hammers-48-22-9419-4f_145.jpg",
   product: "Framing Hammer",
   brand: "Milwaukee",
   size: "5 inches x 16 inches",
@@ -67,6 +69,7 @@ tool_2 = Tool.find_or_create_by(
 tool_3 = Tool.find_or_create_by(
   power_type: "Hand Tool",
   name: "Wrench",
+  image_url: "https://www.truevalue.com/media/catalog/product/206560.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700",
   product: "Adjustable Wrench",
   brand: "Crescent",
   size: "variety",

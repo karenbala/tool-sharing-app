@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2022_11_08_141703) do
   create_table "tools", force: :cascade do |t|
     t.string "power_type", null: false
     t.string "name", null: false
+    t.text "image_url", null: false
     t.string "product"
     t.string "brand"
     t.string "size"
