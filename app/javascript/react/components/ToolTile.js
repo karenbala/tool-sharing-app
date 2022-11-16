@@ -6,6 +6,9 @@ const ToolTile = (props) => {
     
     <div>
       <Link to={`/tools/${props.id}`}>
+      <div>
+          <img src={props.image_url} alt={`image of ${props.name}`} />
+        </div>
         <p>{props.name} : {props.product}</p>
         <p></p>
       </Link>
