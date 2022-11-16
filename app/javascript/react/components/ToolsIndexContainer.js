@@ -31,6 +31,7 @@ const ToolsIndexContainer = (props) => {
         key={tool.id}
         id={tool.id}
         name={tool.name}
+        image_url={tool.image_url}
         product={tool.product}
         description={tool.description}
       />
