@@ -55,7 +55,7 @@ body {
 }
 
 .body-content {
-  margin: 2%;
+  margin: 1%;
   background-color: #F2F2F2;
 }
 
@@ -90,6 +90,27 @@ body {
 
 .topbar-center-logo-mobile .menu-icon {
   vertical-align: text-top;
+}
+
+.hero-container {
+  height: 300px;
+  width: auto;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.right-column {
+  background-color: #989CA6;
+  text-align: center;
+}
+
+.left-column {
+  text-align: center;
 }
 
 .footer-content {

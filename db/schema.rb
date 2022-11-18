@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_08_141703) do
+ActiveRecord::Schema.define(version: 2022_11_16_212856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "requests", force: :cascade do |t|
+    t.bigint "tool_id", null: false
+    t.bigint "owner_id", null: false
+    t.bigint "borrower_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tool_id"], name: "index_requests_on_tool_id"
+  end
 
   create_table "tools", force: :cascade do |t|
     t.string "power_type", null: false
@@ -24,7 +33,9 @@ ActiveRecord::Schema.define(version: 2022_11_08_141703) do
     t.string "size"
     t.string "weight"
     t.text "description", null: false
-    t.bigint "user_id"
+    t.boolean "available", default: true, null: false
+    t.bigint "user_id", null: false
+    t.bigint "borrower_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_tools_on_user_id"
