@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from 'react';
 import ToolShowTile from './ToolShowTile.js';
+import UserTile from './UserTile.js';
 
 const ToolShowContainer = (props) => {
   const [tool, setTool] = useState ({})
@@ -25,10 +26,16 @@ const ToolShowContainer = (props) => {
   }, [])
 
   return (
-    <div>
-      <ToolShowTile
-        tool = {tool}
-      />
+    <div className="grid-x">
+      <div className="cell large-auto left-column"><h4>Meet the Tool</h4>
+        <ToolShowTile
+          tool = {tool}
+        />
+      </div>
+
+      <div className='cell large-auto right-column'><h4>Meet the Owner</h4>
+      <UserTile />
+      </div>
     </div>
   )
 }

@@ -1,10 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# wipe current db
+users = User.destroy_all
+tools = Tool.destroy_all
+requests = Request.destroy_all
 
 user_1 = User.create(
   first_name: "Jeannie",
@@ -15,7 +12,8 @@ user_1 = User.create(
   zip: "04106",
   description: "I love building home projects for myslef and others.",
   username: "greatbourke",
-  email: "jbtools@email.com"
+  email: "jbtools@email.com",
+  password: "password"
 )
 
 user_2 = User.create(
@@ -27,7 +25,8 @@ user_2 = User.create(
   zip: "04106",
   description: "My tools are your tools.",
   username: "coldwinter",
-  email: "mgmaine@email.com"
+  email: "mgmaine@email.com",
+  password: "password"
 )
 
 user_3 = User.create(
@@ -39,7 +38,8 @@ user_3 = User.create(
   zip: "04106",
   description: "I have a basement full of tools. I love sharing my tools with my neighbors, as long as they bring them back!",
   username: "tubsandtools",
-  email: "dbmadabouttools@email.com"
+  email: "dbmadabouttools@email.com",
+  password: "password"
 )
 
 tool_1 = Tool.find_or_create_by(
@@ -51,7 +51,9 @@ tool_1 = Tool.find_or_create_by(
   size: "4 inches",
   weight: "1/4 lb",
   description: "The best screwdriver to get simple tasks done around the house.",
-  user: user_1
+  user_id: 1,
+  borrower_id: 3,
+  available: true
 )
 
 tool_2 = Tool.find_or_create_by(
@@ -63,7 +65,9 @@ tool_2 = Tool.find_or_create_by(
   size: "5 inches x 16 inches",
   weight: "19 oz",
   description: "This hammer has a wood handle and a magnetic head. It also has a milled face and a magnetic nail set.",
-  user: user_2
+  user_id: 1,
+  borrower_id: 2,
+  available: true
 )
 
 tool_3 = Tool.find_or_create_by(
@@ -75,6 +79,26 @@ tool_3 = Tool.find_or_create_by(
   size: "variety",
   weight: "19 oz",
   description: "This is a set of Crescent wrenches to help with any household tasks. The sizes are 6,8,10 inches.",
-  user: user_3
+  user_id: 3,
+  borrower_id: 1
+  available: true
+)
+
+request_1 = Request.create(
+  owner_id: user_3.id,
+  tool_id: tool_3.id,
+  borrower_id: user_2.id
+)
+
+request_2 = Request.create(
+  owner_id: user_2.id,
+  tool_id: tool_3.id,
+  borrower_id: user_3.id
+)
+
+request_3 = Request.create(
+  owner_id: 1,
+  tool_id: 1,
+  borrower_id: 2
 )
 

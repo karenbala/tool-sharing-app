@@ -9,8 +9,10 @@ class CreateTools < ActiveRecord::Migration[5.2]
       t.string :size
       t.string :weight
       t.text :description, null: false
+      t.boolean :available, null:false, default: true
 
-      t.belongs_to :user
+      t.belongs_to :user, null:false
+      t.bigint :borrower_id
 
       t.timestamps null:false
     end
