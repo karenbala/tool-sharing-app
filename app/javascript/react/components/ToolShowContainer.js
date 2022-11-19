@@ -3,7 +3,7 @@ import ToolShowTile from './ToolShowTile.js';
 import UserTile from './UserTile.js';
 
 const ToolShowContainer = (props) => {
-  const [tool, setTool] = useState ({})
+  const [tool, setTool] = useState ({user: {}})
 
   const getTool = async () => {
     try {
@@ -15,29 +15,31 @@ const ToolShowContainer = (props) => {
           throw(error)
         }
         const fetchedTool = await response.json()
-        setTool(fetchedTool)
         // debugger
-    } catch(err) {
-      console.error(`Error in fetch: ${err.message}`)
+        setTool(fetchedTool.tool)
+      } catch(err) {
+        console.error(`Error in fetch: ${err.message}`)
+      }
     }
-  }
-  useEffect(() => {
-    getTool()
-  }, [])
-
-  return (
-    <div className="grid-x">
-      <div className="cell large-auto left-column"><h4>Meet the Tool</h4>
+    useEffect(() => {
+      getTool()
+    }, [])
+    
+    return (
+      <div className="grid-x">
+      <div className="cell large-auto left-column"><h4 className='show-header-text'>Borrow the Tool</h4>
         <ToolShowTile
           tool = {tool}
-        />
+          />
       </div>
 
-      <div className='cell large-auto right-column'><h4>Meet the Owner</h4>
-      <UserTile />
+      <div className='cell large-auto right-column'><h4 className='show-header-text'>Meet the Owner</h4>
+      <UserTile
+       user = {tool.user} />
       </div>
     </div>
   )
 }
+
 
 export default ToolShowContainer

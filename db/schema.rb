@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2022_11_16_212856) do
   create_table "requests", force: :cascade do |t|
     t.bigint "tool_id", null: false
     t.bigint "owner_id", null: false
-    t.bigint "borrower_id"
+    t.bigint "borrower_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tool_id"], name: "index_requests_on_tool_id"
