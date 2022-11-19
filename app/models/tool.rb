@@ -9,7 +9,7 @@ class Tool < ApplicationRecord
   has_many :users, through: :requests
   belongs_to :user # as the owner 
 
-  belongs_to :borrower, class_name: "User"
+  belongs_to :borrower, class_name: "User", optional: true
   
 
 end

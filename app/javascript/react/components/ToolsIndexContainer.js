@@ -15,7 +15,7 @@ const ToolsIndexContainer = (props) => {
         throw(error)
       }
       const responseBody = await response.json()
-      setTools(responseBody)
+      setTools(responseBody.tools)
     } catch(err) {
       console.error(`Error in fetch: ${err.message}`)
     }
@@ -43,7 +43,7 @@ const ToolsIndexContainer = (props) => {
       
       <div className="hero-container">
           <img src='https://www.ikea.com/images/a-person-seated-at-a-white-lagkapten-adils-desk-below-a-bunk-1e51cae5449bc30981d4cce9e4ce91f4.jpg?f=sg' height="300" />
-          <div className='hero-text'><h1>Explore tuulbox</h1></div>
+          <div className='hero-text'><h2>Explore tuulbox</h2></div>
       </div>
        
       <div className="search-bar">

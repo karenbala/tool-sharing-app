@@ -92,27 +92,90 @@ body {
   vertical-align: text-top;
 }
 
-.hero-container {
-  height: 300px;
-  width: auto;
-}
+// .hero-container {
+//   height: 300px;
+//   width: auto;
+// }
 
 .hero-text {
+  color: #A60303;
+  font-style: italic;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
+.grid-x {
+  background-color: white;
+}
+
 .right-column {
-  background-color: #989CA6;
+  background-color: #F2F2F2;
   text-align: center;
+  border-top-left-radius: 25%;
+  border-bottom-left-radius: 5%;
 }
 
 .left-column {
+  background-color: #F2F2F2;
   text-align: center;
+  border-top-right-radius: 25%;
+  border-bottom-right-radius: 5%;
 }
 
+.show-header-text {
+  padding-top: 1.5rem;
+}
+
+// Tool Show Page Section
+
+.card-container {
+  margin: 2rem 4rem;
+  background-color: #fefefe;
+  color: #0a0a0a;
+  overflow: hidden;
+  padding: 0;
+  border-radius: 10px;
+}
+.card-container .card-tool-user-img .tool-user-image {
+  display: block;
+  margin: auto;
+  border-radius: 0;
+  width: 11.875rem;
+  height: 11.875rem;
+  padding-top: 1.5rem;
+  padding-bottom: 0.9375rem;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+}
+
+.card-container .tool-user-info {
+  padding-top: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 3rem;
+  text-align: left;
+}
+
+.card-container .card-user-button {
+  text-align: center;
+  padding: 1rem;
+}
+
+.button {
+  background-color: #03178C;
+  font-size: .8125rem;
+  font-weight: 600;
+}
+
+blockquote {
+  padding: 15px;
+  background: #eee;
+  border-radius: 5px;
+}
+
+// Footer Section
 .footer-content {
   background: #2c3840;
   color: #ffffff;
