@@ -106,7 +106,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.grid-x {
+.show-container {
   background-color: white;
 }
 
@@ -174,6 +174,18 @@ blockquote {
   background: #eee;
   border-radius: 5px;
 }
+// User Profile Section
+.profile-container {
+  background-color: #03178C;
+}
+
+.profile-info {
+  background-color: #F2F2F2;
+  text-align: left;
+  border-top-right-radius: 25%;
+  border-bottom-right-radius: 5%;
+}
+
 
 // Footer Section
 .footer-content {

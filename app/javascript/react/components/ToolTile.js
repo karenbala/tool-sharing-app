@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom"
 
 const ToolTile = (props) => {
- 
+// debugger
   
   return (
     
@@ -12,7 +12,7 @@ const ToolTile = (props) => {
           <img src={props.image_url} alt={`image of ${props.name}`} />
         </div>
         <p>{props.name} : {props.product}</p>
-        <p></p>
+        <p>{props.user}</p>
       </Link>
     </div>
   )

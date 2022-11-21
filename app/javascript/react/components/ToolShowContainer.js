@@ -26,16 +26,18 @@ const ToolShowContainer = (props) => {
     }, [])
     
     return (
-      <div className="grid-x">
-      <div className="cell large-auto left-column"><h4 className='show-header-text'>Borrow the Tool</h4>
-        <ToolShowTile
-          tool = {tool}
-          />
-      </div>
+      <div className="grid-x show-container">
+        <div className="cell large-auto left-column">
+          <h4 className='show-header-text'>Borrow the Tool</h4>
+          <ToolShowTile
+            tool = {tool}
+            />
+        </div>
 
-      <div className='cell large-auto right-column'><h4 className='show-header-text'>Meet the Owner</h4>
-      <UserTile
-       user = {tool.user} />
+      <div className='cell large-auto right-column'>
+        <h4 className='show-header-text'>Meet the Owner</h4>
+        <UserTile
+        user = {tool.user} />
       </div>
     </div>
   )
