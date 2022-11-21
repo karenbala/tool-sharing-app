@@ -13,4 +13,22 @@ class Api::V1::ToolsController < ApiController
       render json: tools
     end
 
+    def create
+      tool = Tool.new(tool_params)
+      tool.user = current_user
+      # binding.pry
+
+      if tool.save
+        flash[:notice] = "New tool added successfully"
+        render json: tool
+     else
+        render json: { errors: tool.errors.full_messages.to_sentence }
+     end
+    end
+
+    private
+    def tool_params
+      params.require(:tool).permit(:power_type, :name, :image_url, :product, :brand, :size, :weight, :description, :available)
+    end
+
 end 

@@ -12,6 +12,9 @@ Rails.application.routes.draw do
       resources :users, only: [:show]
       post 'tools/search', to: 'tools#search'
       
+      resources :users, only: [:show] do
+        resources :tools, only: [:create]
+      end
     end
   end
 end
