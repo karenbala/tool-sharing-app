@@ -75,11 +75,11 @@ test:
 #
 # You can use this database configuration with:
 #
-#   production:
-#     url: <%= ENV['DATABASE_URL'] %>
+
 #
 production:
   <<: *default
   database: tool-sharing-app_production
   username: tool-sharing-app
   password: <%= ENV['TOOL-SHARING-APP_DATABASE_PASSWORD'] %>
+    url: <%= ENV['DATABASE_URL'] %>
