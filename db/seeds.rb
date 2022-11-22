@@ -102,3 +102,36 @@ request_3 = Request.create(
   borrower_id: 2
 )
 
+request_4 = Request.create(
+  owner_id: 4,
+  tool_id: 3,
+  borrower_id: 5
+)
+
+request_5 = Request.create(
+  owner_id: 5,
+  tool_id: 8,
+  borrower_id: 6
+)
+
+request_6 = Request.create(
+  owner_id: 6,
+  tool_id: 11,
+  borrower_id: 5
+)
+
+request_7 = Request.create(
+  owner_id: 4,
+  tool_id: 4,
+  borrower_id: 1
+)
+
+Request.create(
+  owner_id: 4,
+  tool_id: 4,
+  borrower_id: 1
+)
+
+
+
+

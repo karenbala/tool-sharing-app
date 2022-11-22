@@ -29,7 +29,7 @@ const SearchBar = (props) => {
       }
       const responseBody = await response.json()
       props.setTools(
-        responseBody
+        responseBody.tools
       )
     } catch (error) {
       console.error(`Error in Fetch: ${error.message}`)
