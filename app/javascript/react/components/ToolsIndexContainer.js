@@ -3,9 +3,7 @@ import ToolTile from "./ToolTile"
 import SearchBar from "./SearchBar.js"
 
 
-
 const ToolsIndexContainer = (props) => {
-  // debugger
   const [tools, setTools] = useState([])
   
   const getTools = async () => {
@@ -26,33 +24,6 @@ const ToolsIndexContainer = (props) => {
     getTools()
   }, [])
 
-  // const postNewTool = async(formPayLoad) => {
-  //   // debugger
-  //   try{
-  //     const response = await fetch(`/api/v1/users/tools`, {
-  //       method: 'POST',
-  //       credentials: 'same-origin',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //         'Accept': 'application/json'
-  //       },
-  //       body: JSON.stringify(formPayLoad)
-  //     })
-  //     if (!response.ok) {
-  //       const errorMessage = `${response.status} (${response.statusText})`
-  //       const error = new Error(errorMessage)
-  //       throw(error)
-  //     }
-  //     const responseBody = await response.json()
-  //     setTools([
-  //       ...tools,
-  //       responseBody.tools
-  //     ])
-  //   } catch (err){
-  //     console.error(`Error in fetch: ${err.message}`)
-  //   }
-  // }
-  
   const toolTiles = tools.map((tool) => {
     return(
       <ToolTile
@@ -62,6 +33,7 @@ const ToolsIndexContainer = (props) => {
         image_url={tool.image_url}
         product={tool.product}
         description={tool.description}
+        user={tool.user.first_name}
       />
     )
   })
@@ -82,10 +54,6 @@ const ToolsIndexContainer = (props) => {
       <div>
         {toolTiles}
       </div>
-      
-        {/* <NewToolFormContainer
-          postNewTool = {postNewTool}
-        /> */}
       
     </div>
   )

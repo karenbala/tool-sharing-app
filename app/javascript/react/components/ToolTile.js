@@ -12,7 +12,7 @@ const ToolTile = (props) => {
           <img src={props.image_url} alt={`image of ${props.name}`} />
         </div>
         <p>{props.name} : {props.product}</p>
-        <p>{props.user}</p>
+        <p>{props.user}{props.borrower_id}</p>
       </Link>
     </div>
   )

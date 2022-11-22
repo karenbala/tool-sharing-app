@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :tools, only: [:index, :show]
+      resources :tools, only: [:index, :show] do
+        resources :requests, only: [:index]
+      end
       resources :users, only: [:show]
       post 'tools/search', to: 'tools#search'
       

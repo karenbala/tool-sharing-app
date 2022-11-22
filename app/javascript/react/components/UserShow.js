@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import NewToolFormContainer from './NewToolFormContainer.js'
 import ToolTile from './ToolTile.js'
+import RequestTile from './RequestTile.js'
 
 const UserShow = (props)=> {
   const userId = props.match.params.userId
-  // const [tools, setTools] = useState([])
   const [user, setUser] = useState ({
     tools: [],
     borrowedTools: []
   })
+  const [requests, setRequests] = useState ([])
+
 
   const getUser = async () => {
     try{
@@ -19,36 +21,36 @@ const UserShow = (props)=> {
         throw(error)
       }
       const fetchedUser = await response.json()
-      // debugger
       setUser(fetchedUser.user)
-      // setUser({...fetchedUser.user})
-      // setTools(fetchedUser.user.tools)
-      // debugger
+
     } catch(err) {
       console.error(`Error in fetch: ${err.message}`)
     }
   }
+  useEffect(() => {
+    getUser()
+  }, [])
 
-  // const getTools = async () => {
-  //   try {
-  //     const response = await fetch("/api/v1/tools")
-  //     if (!response.ok) {
-  //       const errorMessage = `${response.status} (${response.statusText})`
-  //       const error = new Error(errorMessage)
-  //       throw(error)
-  //     }
-  //     const responseBody = await response.json()
-  //     setTools(responseBody.tools)
-  //   } catch(err) {
-  //     console.error(`Error in fetch: ${err.message}`)
-  //   }
-  // }
-  // useEffect(() => {
-  //   getTools()
-  // }, [])
+  const getRequests = async () => {
+    try {
+      const response = await fetch("/api/v1/tools/tool_id/requests")
+      if (!response.ok) {
+        const errorMessage = `${response.status} (${response.statusText})`
+        const error = new Error(errorMessage)
+        throw(error)
+      }
+      const responseBody = await response.json()
+      setRequests(responseBody.requests)
+    } catch(err) {
+      console.error(`Error in fetch: ${err.message}`)
+    }
+  }
+  useEffect(() => {
+    getRequests()
+  }, [])
 
   const postNewTool = async(formPayLoad) => {
-    // debugger
+    
     try{
       const response = await fetch(`/api/v1/users/${userId}/tools`, {
         method: 'POST',
@@ -65,18 +67,15 @@ const UserShow = (props)=> {
         throw(error)
       }
       const responseBody = await response.json()
+      setUser([
       // rework here with tool state removed
-      setTools([
-        ...tools,
-        responseBody.tools
+        ...user,
+        responseBody.user
       ])
     } catch (err){
       console.error(`Error in fetch: ${err.message}`)
     }
   }
-  useEffect(() => {
-    getUser()
-  }, [])
   
   const toolTiles = user.tools.map((tool) => {
     return(
@@ -91,21 +90,36 @@ const UserShow = (props)=> {
       />
     )
   })
+
+  const requestTiles = requests.map ((request) => {
+    debugger
+    return(
+      <RequestTile 
+        key={request.id}
+        id={request.id}
+        tool={request.tool_id}
+        owner={request.owner_id}
+        borrower={request.borrower_id}
+      />
+    )
+  })
+
   return(
     <div className="grid-x profile-container">
       <div className='cell large-auto left-column profile-info'>
         <h6 className='show-header-text'>Received Requests for {user.first_name}'s Tools</h6>
         <h6 className='show-header-text'>{user.first_name}'s Requests to Borrow Tools</h6>
+        {requestTiles}
       </div>
       <div className='cell large-auto right-column'>
-        <h4 className='show-header-text'>Hello {user.first_name}!</h4>
-      <div>
-        <NewToolFormContainer
-          postNewTool = {postNewTool} />
-      </div>
-      <div>
-        {toolTiles}
-      </div>
+          <h4 className='show-header-text'>Hello {user.first_name}!</h4>
+        <div>
+          <NewToolFormContainer
+            postNewTool = {postNewTool} />
+        </div>
+        <div>
+          {toolTiles}
+        </div>
       </div>
     </div>
   )
