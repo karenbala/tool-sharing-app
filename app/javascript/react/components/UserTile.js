@@ -18,9 +18,7 @@ const UserTile = (props) =>{
           <blockquote>{user.description}</blockquote>
         </ul>
       </div>
-      <div className='card-user-button'>
-        <a href="#" className='button'>Email {user.first_name}</a>
-      </div>
+      
     </div>
   )
 }
