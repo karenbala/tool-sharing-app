@@ -4,5 +4,5 @@ class ToolSerializer < ActiveModel::Serializer
   # has_many :requests
   # has_many :users, through: :requests
   belongs_to :user
-  # belongs_to :borrower, class_name:"User"
+  belongs_to :borrower, class_name:"User"
 end

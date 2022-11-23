@@ -51,7 +51,7 @@ const ToolsIndexContainer = (props) => {
         />
       </div>
       <h5>Available Tools</h5>
-      <div>
+      <div className="grid-x">
         {toolTiles}
       </div>
       

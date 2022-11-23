@@ -80,7 +80,7 @@ tool_3 = Tool.find_or_create_by(
   weight: "19 oz",
   description: "This is a set of Crescent wrenches to help with any household tasks. The sizes are 6,8,10 inches.",
   user_id: 3,
-  borrower_id: 1
+  borrower_id: 1,
   available: true
 )
 
