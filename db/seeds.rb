@@ -55,7 +55,7 @@ tool_1 = Tool.find_or_create_by(
   borrower_id: user_3.id,
   available: true
 )
-binding.pry
+
 tool_2 = Tool.find_or_create_by(
   power_type: "Hand Tool",
   name: "Hammer",
