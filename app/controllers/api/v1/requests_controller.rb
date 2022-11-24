@@ -10,11 +10,20 @@ class Api::V1::RequestsController < ApiController
   def create
     user = current_user
     tool = Tool.find(params[:tool_id])
-    owner = tool.owner
-    request = Request.new()
+    # owner_id = tool.owner
+
+    # nick says finish making this request
+    request = Request.new(request_params)
 
     if request.save
-      # ...
+      render json: {}
+    else  
+      render json: { error: "bad request" }, status: 400
+    end
+
+    private
+    def request_params
+      params.require(:request).permit(:tool, :owner, :borrower)
     end
   end
 end

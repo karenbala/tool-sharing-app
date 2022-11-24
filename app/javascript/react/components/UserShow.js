@@ -54,7 +54,6 @@ const UserShow = (props)=> {
       }
       const responseBody = await response.json()
       setUser([
-      // rework here with tool state removed
         ...user,
         responseBody.user
       ])
