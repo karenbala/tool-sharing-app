@@ -184,6 +184,11 @@ blockquote {
 
 .sign-in {
   background-image: url(https://empire-s3-production.bobvila.com/articles/wp-content/uploads/2021/11/iStock-898829352.jpg);
+  height: 800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
   
 //   background-color: #989CA6;
   // padding-top: 100px;
@@ -197,7 +202,10 @@ blockquote {
   padding: 1rem 1.5em;
   border-radius: .5rem;
   background-color: #2c3840;
-  margin-bottom: 75%;
+  margin-left: 35%;
+  margin-right: 35%;
+  position: absolute;
+  // margin-bottom: 75%;
 }
 
 .sign-in-form h4 {
