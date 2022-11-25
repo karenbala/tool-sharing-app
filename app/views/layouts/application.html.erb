@@ -39,22 +39,21 @@
     <ul class="menu vertical medium-horizontal">
        <%- if current_user -%>
             <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
-            <li><a href="/users/<%= current_user.id %>">Mighty Profile</a></li>
+            <li><a href="/users/<%= current_user.id %>">My Profile</a></li>
         <%- else -%>
-            <%= link_to 'Create Account', new_user_registration_path %>
+            <%= link_to 'Sign Up', new_user_registration_path %>
             <%= link_to 'Log In', new_user_session_path %>
         <%- end -%>
     </ul>
   </div>
 </div>
 <!-- /medium and larger nav bar -->
-  
-  
-   
 
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
-      <%= value %>
+      <div class="flash flash-alert">
+        <h5><%= value %></h5>
+      </div>
     </div>
   <%- end -%>
   <div class="body-content">
@@ -75,7 +74,7 @@
 
 <footer>
   <div class="footer">
-    <p class="footer-content">Open to share tools</p>
+    <p class="footer-content">Open to Share Tools</p>
   </div>
 </footer>
 </html>

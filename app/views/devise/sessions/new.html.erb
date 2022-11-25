@@ -1,18 +1,18 @@
 <div class="sign-in">
-  <form class="sign-in-container">
+  
     <div class="sign-in-form">
-      <h4 class="text-center">Sign In</h4>
+      <h4 class="text-center">Log In</h4>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
         <div class="sign-in-form-username">
-          <label for="sign-in-form-username"><%= f.label :email %><br /></label>
-          <input type="text" class="sign-in-form-username" id="sign-in-form-username" <%= f.email_field :email, autofocus: true, autocomplete: "email" %>>
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
 
         <div class="sign-in-form-password">
-          <label for="sign-in-form-password"><%= f.label :password %><br /></label>
-          <input type="text" class="sign-in-form-password" id="sign-in-form-password" <%= f.password_field :password, autocomplete: "current-password" %>>
+          <%= f.label :password %>
+          <%= f.password_field :password, autocomplete: "current-password" %>
         </div>
 
         <% if devise_mapping.rememberable? %>
@@ -22,12 +22,13 @@
           </div>
         <% end %>
 
-          <button type="submit" class="sign-in-form-button"><%= f.submit "Sign In" %></button>
+          <div class="sign-in-form-button"><%= f.submit "Log In" %>
+          </div>
         
       <% end %>
-      <div class="sign-in-form-username">
-        <label for="sign-in-form-username"><%= render "devise/shared/links" %></label>
+      <div class="sign-in-form-links">
+        <%= render "devise/shared/links" %>
       </div>
     </div>
-  </form>
+  
 </div>
