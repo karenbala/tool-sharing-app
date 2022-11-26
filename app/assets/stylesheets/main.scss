@@ -120,7 +120,7 @@ blockquote {
 }
 
 .hero-img {
-  opacity: 0.95;
+  filter:brightness(90%);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -134,10 +134,17 @@ blockquote {
   font-weight: 600;
   position: absolute;
   top: 38%;
-  left: 50%;
+  left: 36%;
   transform: translate(-50%, -50%);
 }
 
+.search-group-rounded {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: 80%;
+  left: 30%;
+}
 .search-group-rounded .search-group-field {
   border-radius: 5000px 0 0 5000px;
   padding-left: 1rem;

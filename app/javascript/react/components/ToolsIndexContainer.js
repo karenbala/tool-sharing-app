@@ -43,7 +43,7 @@ const ToolsIndexContainer = (props) => {
       <div className="hero-container">
           <img className="hero-img" src='https://www.ikea.com/images/a-person-seated-at-a-white-lagkapten-adils-desk-below-a-bunk-1e51cae5449bc30981d4cce9e4ce91f4.jpg?f=sg' />
           <div>
-            <h2 className='hero-text'>We are open to share.</h2>
+            <h2 className='hero-text'>Share tools and build spaces</h2>
           </div>
           <div className="search-bar">
             <SearchBar
