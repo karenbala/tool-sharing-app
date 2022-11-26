@@ -41,15 +41,16 @@ const ToolsIndexContainer = (props) => {
   return (
     <div>
       <div className="hero-container">
-          <img src='https://www.ikea.com/images/a-person-seated-at-a-white-lagkapten-adils-desk-below-a-bunk-1e51cae5449bc30981d4cce9e4ce91f4.jpg?f=sg' height="300" />
-          <div className='hero-text'><h2>Explore tuulbox</h2></div>
+          <img className="hero-img" src='https://www.ikea.com/images/a-person-seated-at-a-white-lagkapten-adils-desk-below-a-bunk-1e51cae5449bc30981d4cce9e4ce91f4.jpg?f=sg' />
+          <div>
+            <h2 className='hero-text'>We are open to share.</h2>
+          </div>
+          <div className="search-bar">
+            <SearchBar
+              setTools={setTools} />
+          </div>
       </div>
        
-      <div className="search-bar">
-        <SearchBar
-          setTools={setTools}
-        />
-      </div>
       <h5>Available Tools</h5>
       <div>
         {toolTiles}
