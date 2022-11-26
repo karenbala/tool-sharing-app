@@ -55,86 +55,16 @@ body {
   background-color: #F2F2F2;
 }
 
-#error_explanation {
-  background-color: #A60303;
-  color:white;
-  font-family: 'IBM Plex Serif', serif;
-  line-height: 1.3;
-  padding: 3%;
-  border-radius: .5rem;
-  margin: 1%;
+.button {
+  background-color: #03178C;
+  font-size: .8125rem;
+  font-weight: 600;
 }
 
-.error_explanation_list{
-  list-style-type: none;
-}
-
-.flash .flash-alert{
-  background-color: #F2CB05;
-  padding-left: 1%;
-}
-
-.top-bar-center-logo {
-  background: #2c3840;
-}
-
-.top-bar-center-logo .menu {
-  background: #2c3840;
-}
-
-.top-bar-center-logo .menu a {
-  color: #fefefe;
-}
-
-.top-bar-center-logo .top-bar-center {
-  -webkit-flex: 1 0 auto;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
-}
-
-@media screen and (max-width: 39.9375em) {
-  .top-bar-center-logo .top-bar-center {
-    display: none;
-  }
-}
-
-.top-bar-center-logo-mobile {
-  background: #2c3840;
-}
-
-.top-bar-center-logo-mobile .menu-icon {
-  vertical-align: text-top;
-}
-
-.hero-text {
-  color: #A60303;
-  font-style: italic;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.show-container {
-  background-color: white;
-}
-
-.right-column {
-  background-color: #F2F2F2;
-  text-align: center;
-  border-top-left-radius: 25%;
-  border-bottom-left-radius: 5%;
-}
-
-.left-column {
-  background-color: #F2F2F2;
-  text-align: center;
-  border-top-right-radius: 25%;
-  border-bottom-right-radius: 5%;
-}
-
-.show-header-text {
-  padding-top: 1.5rem;
+blockquote {
+  padding: 15px;
+  background: #eee;
+  border-radius: 5px;
 }
 
 .card-container {
@@ -170,18 +100,89 @@ body {
   padding: 1rem;
 }
 
-.button {
+#error_explanation {
+  background-color: #A60303;
+  color:white;
+  font-family: 'IBM Plex Serif', serif;
+  line-height: 1.3;
+  padding: 3%;
+  border-radius: .5rem;
+  margin: 1%;
+}
+
+.error_explanation_list{
+  list-style-type: none;
+}
+
+.flash .flash-alert{
+  background-color: #F2CB05;
+  padding-left: 1%;
+}
+
+.hero-img {
+  filter:brightness(90%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  position: relative;
+}
+.hero-text {
+  color: #A60303;
+  font-style: italic;
+  font-size: 5vw;
+  font-weight: 600;
+  position: absolute;
+  top: 38%;
+  left: 36%;
+  transform: translate(-50%, -50%);
+}
+
+.search-group-rounded {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: 80%;
+  left: 30%;
+}
+.search-group-rounded .search-group-field {
+  border-radius: 5000px 0 0 5000px;
+  padding-left: 1rem;
+  width: 500px;
+  text-align: center;
+}
+
+.search-group-rounded .search-group-button .button {
+  border-radius: 0 5000px 5000px 0;
+  font-size: 1rem;
   background-color: #03178C;
   font-size: .8125rem;
   font-weight: 600;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-blockquote {
-  padding: 15px;
-  background: #eee;
-  border-radius: 5px;
+
+@media screen and (max-width: 39.9375em) {
+  .top-bar-center-logo .top-bar-center {
+    display: none;
+  }
 }
-// User Profile Section
+
+.left-column {
+  background-color: #F2F2F2;
+  text-align: center;
+  border-top-right-radius: 25%;
+  border-bottom-right-radius: 5%;
+}
+
+.right-column {
+  background-color: #F2F2F2;
+  text-align: center;
+  border-top-left-radius: 25%;
+  border-bottom-left-radius: 5%;
+}
+
 .profile-container {
   background-color: #03178C;
 }
@@ -191,6 +192,14 @@ blockquote {
   text-align: left;
   border-top-right-radius: 25%;
   border-bottom-right-radius: 5%;
+}
+
+.show-container {
+  background-color: white;
+}
+
+.show-header-text {
+  padding-top: 1.5rem;
 }
 
 .sign-in {
@@ -319,6 +328,36 @@ blockquote {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 600;
+}
+
+.top-bar-center-logo {
+  background: #2c3840;
+}
+
+.top-bar-center-logo .menu {
+  background: #2c3840;
+}
+
+.top-bar-center-logo .menu a {
+  color: #fefefe;
+}
+
+.top-bar-center-logo .top-bar-center {
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+.top-bar-center-logo-mobile {
+  background: #2c3840;
+}
+
+.top-bar-center-logo-mobile .menu-icon {
+  vertical-align: text-top;
+}
+
+.top-bar-left-text {
+  color:#2c3840;
 }
 
 .footer-content {

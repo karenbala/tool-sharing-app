@@ -39,16 +39,19 @@ const SearchBar = (props) => {
 
   return(
     <div>
-      <form onSubmit={handleSubmit}>
-          <label className="search">Search for a Tool</label>
-            <input 
-              type='text' 
-              name='searchString'
-              value={searchString}
-              onChange={handleChange}
-            />
-          <input className="button" type='submit' value='Let us help you find tools.' />
-      </form>
+        <form onSubmit={handleSubmit}>
+      <div className="search-group search-group-rounded">
+              <input class="search-group-field" 
+                type='text' 
+                name='searchString'
+                value={searchString}
+                onChange={handleChange}
+              />
+            <div class="search-group-button">
+              <input className="button secondary" type='submit' value='Search Tools' />
+            </div>
+      </div>
+        </form>
     </div>
   )
 }
