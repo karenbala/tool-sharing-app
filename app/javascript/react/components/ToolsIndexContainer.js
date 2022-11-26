@@ -18,7 +18,7 @@ const ToolsIndexContainer = (props) => {
       }
       const responseBody = await response.json()
       setTools(responseBody.tools)
-      setUser(responseBody.tools.current_user)
+      setUser(responseBody.current_user)
 
 
       // nick says go into the response body, get the current user info, and set that in user state
@@ -39,7 +39,8 @@ const ToolsIndexContainer = (props) => {
         image_url={tool.image_url}
         product={tool.product}
         description={tool.description}
-        user={tool.user.first_name}
+        first_name={tool.user.first_name}
+        last_name={tool.user.last_name}
         current_user={tool.current_user}
       />
     )

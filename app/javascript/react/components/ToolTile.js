@@ -7,10 +7,14 @@ const ToolTile = (props) => {
   const makeRequest = async () => {
     const response = await fetch(`/api/v1/tools/${props.id}/requests`, {
       method: "POST",
-      header: {},
+      // credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
       body: JSON.stringify(props.id)
     })
-
+// debugger
     if (response.ok){
       setRedirect(true)
     } else {
@@ -30,7 +34,7 @@ const ToolTile = (props) => {
             <img src={props.image_url} alt={`image of ${props.name}`} className="tool-user-image" />
         </div>
         <p>{props.name} : {props.product}</p>
-        <p>{props.user}{props.borrower_id}</p>
+        <p>{props.first_name} {props.last_name}</p>
       </Link>
 
       <div className='card-user-button'>

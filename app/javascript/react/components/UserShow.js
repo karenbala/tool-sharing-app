@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import NewToolFormContainer from './NewToolFormContainer.js'
 import ToolTile from './ToolTile.js'
 import UserTile from './UserTile.js'
-import RequestTile from './RequestTile.js'
+// import RequestTile from './RequestTile.js'
 
 const UserShow = (props)=> {
   // debugger
@@ -13,7 +13,7 @@ const UserShow = (props)=> {
     issued_requests: [],
     received_requests: []
   })
-  // const [requests, setRequests] = useState ([])
+  const [requests, setRequests] = useState ([])
 
 
   const getUser = async () => {
@@ -72,7 +72,6 @@ const UserShow = (props)=> {
         image_url={tool.image_url}
         product={tool.product}
         description={tool.description}
-        // user={tool.user.first_name}
       />
     )
   })
@@ -93,8 +92,12 @@ const UserShow = (props)=> {
   return(
     <div className="grid-x profile-container">
       <div className='cell large-auto left-column'>
-        <h6 className='show-header-text'>Received Requests for {user.first_name}'s Tools</h6>
+        <h6 className='show-header-text'>Received Pending Requests for {user.first_name}'s Tools</h6>
+        <p>{user.received_requests}</p>
         <h6 className='show-header-text'>{user.first_name}'s Requests to Borrow Tools</h6>
+        <p>{user.issued_requests}</p>
+        <h6 className='show-header-text'>{user.first_name}'s Borrowed / Checked Out Tools</h6>
+        <p>{user.borrowed_tools}</p>
         {/* {requestTiles} */}
       </div>
       <div className='cell large-auto right-column'>
