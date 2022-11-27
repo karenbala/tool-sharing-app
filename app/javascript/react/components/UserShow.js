@@ -5,22 +5,22 @@ import UserTile from './UserTile.js'
 import RequestTile from './RequestTile.js'
 
 const UserShow = (props)=> {
-debugger
+// debugger
   const userId = props.match.params.userId
+  const [requests, setRequests] = useState ([])
+
   const [user, setUser] = useState ({
     tools: [],
     borrowed_tools: [],
     issued_requests: [],
     received_requests: []
   })
-  const [requests, setRequests] = useState ([])
-
 
   const getUser = async () => {
-debugger
+// debugger
     try{
       const response = await fetch(`/api/v1/users/${userId}`)
-debugger
+// debugger
       if (!response.ok) {
         const errorMessage = `${response.status} (${response.statusText})`
         const error = new Error(errorMessage)
@@ -28,13 +28,34 @@ debugger
       }
       const fetchedUser = await response.json()
       setUser(fetchedUser.user)
-debugger
+// debugger
     } catch(err) {
       console.error(`Error in fetch: ${err.message}`)
     }
   }
   useEffect(() => {
     getUser()
+  }, [])
+
+  const getRequests = async () => {
+debugger
+    try{
+      const response = await fetch(`/api/v1/tools/${tool.id}/requests`)
+      if (!response.ok) {
+debugger
+        const errorMessage = `${response.status} (${response.statusText})`
+        const error = new Error(errorMessage)
+        throw(error)
+      }
+      const responseBody = await response.json()
+debugger
+      setRequests(responseBody.requests)
+      } catch(err) {
+        console.error(`Error in fetch: ${err.message}`)
+      }
+    }
+  useEffect(() => {
+    getRequests()
   }, [])
 
   const postNewTool = async(formPayLoad) => {
@@ -66,7 +87,7 @@ debugger
   }
   
   const toolTiles = user.tools.map((tool) => {
-debugger
+// debugger
     return(
       <ToolTile
         key={tool.id}
@@ -80,7 +101,7 @@ debugger
   })
 
   const requestTiles = requests.map ((request) => {
-debugger
+// debugger
     return(
       <RequestTile 
         key={request.id}
@@ -96,12 +117,12 @@ debugger
     <div className="grid-x profile-container">
       <div className='cell large-auto left-column'>
         <h6 className='show-header-text'>Received Pending Requests for {user.first_name}'s Tools</h6>
-        <p>{tool.user.received_requests}</p>
+        {/* <p>{user.received_requests}</p> */}
         <h6 className='show-header-text'>{user.first_name}'s Requests to Borrow Tools</h6>
         {/* <p>{user.issued_requests}</p> */}
-        <h6 className='show-header-text'>{user.first_name}'s Borrowed / Checked Out Tools</h6>
+        <h6 className='show-header-text'>{user.first_name}'s Borrowed / Checked Out Tools {requestTiles}</h6>
         {/* <p>{user.borrowed_tools}</p> */}
-        {requestTiles}
+        
       </div>
       <div className='cell large-auto right-column'>
           <h4 className='show-header-text'>Hello {user.first_name}!</h4>

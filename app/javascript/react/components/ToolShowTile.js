@@ -40,7 +40,7 @@ const ToolShowTile = (props) => {
   }
 
   if (redirect === true){
-  debugger
+  // debugger
     return (
     <Redirect to={`/users/${tool.current_user.id}`} />);
     }
