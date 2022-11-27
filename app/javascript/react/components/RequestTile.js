@@ -1,7 +1,7 @@
 import React from 'react';
 
 const RequestTile = (props) => {
-debugger
+// debugger
   return (
     <div>
       <p>Tool:{props.tool.name}</p>
