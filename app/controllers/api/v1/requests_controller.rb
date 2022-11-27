@@ -8,14 +8,7 @@ class Api::V1::RequestsController < ApiController
   end
 
   def create
-    user = current_user
-    tool = Tool.find(params[:tool_id])
-
-     
-    # owner_id = tool.owner
-
-    # nick says finish making this request
-    # binding.pry
+    
     request = Request.new(request_params)
 
     if request.save
@@ -23,10 +16,11 @@ class Api::V1::RequestsController < ApiController
     else  
       render json: { error: "bad request" }, status: 400
     end
-
-    private
-    def request_params
-      params.require(:request).permit(:tool_id, :owner_id, :borrower_id)
-    end
   end
+
+  private
+  def request_params
+    params.require(:request).permit(:tool_id, :owner_id, :borrower_id)
+  end
+  
 end

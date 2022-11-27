@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import NewToolFormContainer from './NewToolFormContainer.js'
 import ToolTile from './ToolTile.js'
 import UserTile from './UserTile.js'
-// import RequestTile from './RequestTile.js'
+import RequestTile from './RequestTile.js'
 
 const UserShow = (props)=> {
-  // debugger
+debugger
   const userId = props.match.params.userId
   const [user, setUser] = useState ({
     tools: [],
@@ -17,9 +17,10 @@ const UserShow = (props)=> {
 
 
   const getUser = async () => {
-    // debugger
+debugger
     try{
       const response = await fetch(`/api/v1/users/${userId}`)
+debugger
       if (!response.ok) {
         const errorMessage = `${response.status} (${response.statusText})`
         const error = new Error(errorMessage)
@@ -27,6 +28,7 @@ const UserShow = (props)=> {
       }
       const fetchedUser = await response.json()
       setUser(fetchedUser.user)
+debugger
     } catch(err) {
       console.error(`Error in fetch: ${err.message}`)
     }
@@ -57,13 +59,14 @@ const UserShow = (props)=> {
         ...user,
         responseBody.user
       ])
+      setRequests(responseBody.request)
     } catch (err){
       console.error(`Error in fetch: ${err.message}`)
     }
   }
   
   const toolTiles = user.tools.map((tool) => {
-    // debugger
+debugger
     return(
       <ToolTile
         key={tool.id}
@@ -76,29 +79,29 @@ const UserShow = (props)=> {
     )
   })
 
-  // const requestTiles = requests.map ((request) => {
-  //   // debugger
-  //   return(
-  //     <RequestTile 
-  //       key={request.id}
-  //       id={request.id}
-  //       tool={request.tool_id}
-  //       owner={request.owner_id}
-  //       borrower={request.borrower_id}
-  //     />
-  //   )
-  // })
+  const requestTiles = requests.map ((request) => {
+debugger
+    return(
+      <RequestTile 
+        key={request.id}
+        id={request.id}
+        tool={request.tool_id}
+        owner={request.owner_id}
+        borrower={request.borrower_id}
+      />
+    )
+  })
 
   return(
     <div className="grid-x profile-container">
       <div className='cell large-auto left-column'>
         <h6 className='show-header-text'>Received Pending Requests for {user.first_name}'s Tools</h6>
-        <p>{user.received_requests}</p>
+        <p>{tool.user.received_requests}</p>
         <h6 className='show-header-text'>{user.first_name}'s Requests to Borrow Tools</h6>
-        <p>{user.issued_requests}</p>
+        {/* <p>{user.issued_requests}</p> */}
         <h6 className='show-header-text'>{user.first_name}'s Borrowed / Checked Out Tools</h6>
-        <p>{user.borrowed_tools}</p>
-        {/* {requestTiles} */}
+        {/* <p>{user.borrowed_tools}</p> */}
+        {requestTiles}
       </div>
       <div className='cell large-auto right-column'>
           <h4 className='show-header-text'>Hello {user.first_name}!</h4>

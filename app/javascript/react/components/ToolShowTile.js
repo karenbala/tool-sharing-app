@@ -1,12 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Link, Redirect } from "react-router-dom"
-
+import _ from "lodash"
 
 const ToolShowTile = (props) => {
   const tool = props.tool
+  const owner = tool.user
+  const [request, setRequest] = useState (null)
   const [redirect, setRedirect] = useState(false)
 
+  const handleClick = (event) => {
+    event.preventDefault()
+    setRequest({
+      tool_id: tool.id,
+      owner_id: owner.id,
+      borrower_id: tool.current_user.id
+    })
+  }
+  useEffect(() => {
+    !_.isEmpty(request) && makeRequest()
+  }, [request])
+
   const makeRequest = async () => {
+    // debugger
     const response = await fetch(`/api/v1/tools/${tool.id}/requests`, {
       method: "POST",
       credentials: 'same-origin',
@@ -14,20 +29,21 @@ const ToolShowTile = (props) => {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      body: JSON.stringify(tool.id)
+      body: JSON.stringify({ request: request })
     })
-// debugger
+
     if (response.ok){
       setRedirect(true)
     } else {
       console.log("something went wrong")
     }
+  }
 
   if (redirect === true){
-    <Redirect to={`/users/${current_user.id}`}></Redirect>
+  debugger
+    return (
+    <Redirect to={`/users/${tool.current_user.id}`} />);
     }
-  }
-  // debugger
   return(
     <div className="card-container">
         <div className="card-tool-user-img" >
@@ -47,7 +63,7 @@ const ToolShowTile = (props) => {
           </ul>
 
           <div className='card-user-button'>
-            <button className="button" type="button" onClick={makeRequest}> 
+            <button className="button" type="button" onClick={handleClick}> 
             Borrow Tool
             </button>
           </div>
