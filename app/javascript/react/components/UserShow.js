@@ -92,7 +92,7 @@ const UserShow = (props)=> {
   })
 
   const requestTiles = requests.map ((request) => {
-    debugger
+    // debugger
     return(
       <RequestTile 
         key={request.id}

@@ -221,6 +221,24 @@ blockquote {
   height: 500px;
 }
 
+.new-tool-form {
+  padding: 1rem 1.5em;
+  border-radius: .5rem;
+  background-color: #2c3840;
+  width: 500px;
+  height: 1200px;
+}
+
+.new-tool-form h5 {
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.new-tool-label {
+  text-align: left;
+}
+
 .sign-in-form h5 {
   color: white;
   margin-bottom: 1rem;
