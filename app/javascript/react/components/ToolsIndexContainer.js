@@ -5,7 +5,7 @@ import SearchBar from "./SearchBar.js"
 
 const ToolsIndexContainer = (props) => {
   const [tools, setTools] = useState([])
-  const [user, setUser] = useState([])
+  // const [user, setUser] = useState([])
   // add user state
   
   const getTools = async () => {
@@ -18,7 +18,7 @@ const ToolsIndexContainer = (props) => {
       }
       const responseBody = await response.json()
       setTools(responseBody.tools)
-      setUser(responseBody.current_user)
+      // setUser(responseBody.current_user)
 
 
       // nick says go into the response body, get the current user info, and set that in user state

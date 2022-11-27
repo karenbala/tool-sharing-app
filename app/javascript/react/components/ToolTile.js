@@ -2,29 +2,29 @@ import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom"
 
 const ToolTile = (props) => {
-  const [redirect, setRedirect] = useState(false)
+  // const [redirect, setRedirect] = useState(false)
 
-  const makeRequest = async () => {
-    const response = await fetch(`/api/v1/tools/${props.id}/requests`, {
-      method: "POST",
-      // credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(props.id)
-    })
-// debugger
-    if (response.ok){
-      setRedirect(true)
-    } else {
-      console.log("something went wrong")
-    }
+//   const makeRequest = async () => {
+//     const response = await fetch(`/api/v1/tools/${props.id}/requests`, {
+//       method: "POST",
+//       // credentials: 'same-origin',
+//       headers: {
+//         'Content-Type': 'application/json',
+//         'Accept': 'application/json'
+//       },
+//       body: JSON.stringify(props.id)
+//     })
+// // debugger
+//     if (response.ok){
+//       setRedirect(true)
+//     } else {
+//       console.log("something went wrong")
+//     }
 
-  if (redirect === true){
-    <Redirect to={`/users/${props.current_user.id}`}></Redirect>
-    }
-  }
+//   if (redirect === true){
+//     <Redirect to={`/users/${props.current_user.id}`}></Redirect>
+//     }
+//   }
 // debugger
   return (
     
@@ -37,11 +37,11 @@ const ToolTile = (props) => {
         <p>{props.first_name} {props.last_name}</p>
       </Link>
 
-      <div className='card-user-button'>
+      {/* <div className='card-user-button'>
           <button className="button" type="button" onClick={makeRequest}> 
             Borrow Tool
           </button>
-      </div>
+      </div> */}
     </div>
   )
 }

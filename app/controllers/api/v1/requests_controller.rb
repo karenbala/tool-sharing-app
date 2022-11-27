@@ -10,11 +10,13 @@ class Api::V1::RequestsController < ApiController
   def create
     user = current_user
     tool = Tool.find(params[:tool_id])
-    # tool = request.tool 
+
+     
     # owner_id = tool.owner
 
     # nick says finish making this request
-    @request = Request.new(request_params)
+    # binding.pry
+    request = Request.new(request_params)
 
     if request.save
       render json: {}
@@ -24,7 +26,7 @@ class Api::V1::RequestsController < ApiController
 
     private
     def request_params
-      params.require(:request).permit(:tool, :owner_id, :borrower_id)
+      params.require(:request).permit(:tool_id, :owner_id, :borrower_id)
     end
   end
 end

@@ -4,6 +4,8 @@ import UserTile from './UserTile.js';
 
 const ToolShowContainer = (props) => {
   const [tool, setTool] = useState ({user: {}})
+  // const [user, setUser] = useState([])
+
 
   const getTool = async () => {
     try {
@@ -17,6 +19,7 @@ const ToolShowContainer = (props) => {
         const fetchedTool = await response.json()
         // debugger
         setTool(fetchedTool.tool)
+        // setUser(fetchedTool.current_user)
       } catch(err) {
         console.error(`Error in fetch: ${err.message}`)
       }
