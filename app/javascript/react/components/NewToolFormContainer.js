@@ -52,6 +52,7 @@ const NewToolFormContainer = (props) => {
         description: '',
         available: '',
       })
+      clearForm()
     }
   }
   // debugger
@@ -181,13 +182,12 @@ const NewToolFormContainer = (props) => {
                 />
               </label>
             </div>
+            <div class="new-tool-button">
+              <a><button class="sign-up-text">Add Tool</button></a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="sign-up-button">
-        <a><button class="sign-up-text">Add Tool</button></a>
-      </div>
-      {/* <input className="button" type="submit" value="Add Tool" /> */}
     </form>
 </div>
            
