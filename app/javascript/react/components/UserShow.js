@@ -3,6 +3,7 @@ import NewToolFormContainer from './NewToolFormContainer.js'
 import ToolTile from './ToolTile.js'
 import UserTile from './UserTile.js'
 import RequestTile from './RequestTile.js'
+import IssuedRequestTile from './IssuedRequestTile.js'
 
 const UserShow = (props)=> {
 // debugger
@@ -96,7 +97,18 @@ const UserShow = (props)=> {
         image_url={tool.image_url}
         product={tool.product}
         description={tool.description}
-        issued_requests={tool.issued_requests}
+      />
+    )
+  })
+
+  const issuedRequestTile = user.issued_requests.map((issue) => {
+debugger
+    return(
+      <IssuedRequestTile
+        key={issue.id}
+        id={issue.id}
+        tool_id={issue.tool_id}
+        owner_id={issue.owner_id}
       />
     )
   })
@@ -120,7 +132,7 @@ const UserShow = (props)=> {
         <h6 className='show-header-text'>Received Pending Requests for {user.first_name}'s Tools</h6>
         <p>{props.received_requests}</p>
         <h6 className='show-header-text'>{user.first_name}'s Requests to Borrow Tools</h6>
-        <p>{props.issued_requests}</p>
+        <p className='call-out'>{issuedRequestTile}</p>
         <h6 className='show-header-text'>{user.first_name}'s Borrowed / Checked Out Tools {requestTiles}</h6>
         {/* <p>{user.borrowed_tools}</p> */}
         
