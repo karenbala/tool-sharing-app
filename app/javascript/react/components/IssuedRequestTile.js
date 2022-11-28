@@ -3,9 +3,10 @@ import React from 'react';
 const IssuedRequestTile = (props) => {
   
   return (
-    <div>
-      <p>Tool: {props.tool_id}</p>
-      <p>Owner: {props.owner_id}</p>
+    <div className='callout'>
+      Tool: {props.tool_id}
+      <br/>
+      Owner: {props.owner_id}
     </div>
   )
 }

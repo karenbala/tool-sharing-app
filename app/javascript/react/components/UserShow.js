@@ -4,6 +4,7 @@ import ToolTile from './ToolTile.js'
 import UserTile from './UserTile.js'
 import RequestTile from './RequestTile.js'
 import IssuedRequestTile from './IssuedRequestTile.js'
+import ReceivedRequestTile from './ReceivedRequestTile.js'
 
 const UserShow = (props)=> {
 // debugger
@@ -107,8 +108,19 @@ debugger
       <IssuedRequestTile
         key={issue.id}
         id={issue.id}
-        tool_id={issue.tool_id}
-        owner_id={issue.owner_id}
+        tool_name={issue.tool.name}
+        owner={issue.owner_id}
+      />
+    )
+  })
+
+  const receivedRequestTile = user.received_requests.map((receivedItem) => {
+    return (
+      <ReceivedRequestTile
+        key={receivedItem.id}
+        id={receivedItem.id}
+        tool_id={receivedItem.tool_id}
+        borrower_id={receivedItem.borrower_id}
       />
     )
   })
@@ -130,9 +142,9 @@ debugger
     <div className="grid-x profile-container">
       <div className='cell large-auto left-column'>
         <h6 className='show-header-text'>Received Pending Requests for {user.first_name}'s Tools</h6>
-        <p>{props.received_requests}</p>
+        <p>{receivedRequestTile}</p>
         <h6 className='show-header-text'>{user.first_name}'s Requests to Borrow Tools</h6>
-        <p className='call-out'>{issuedRequestTile}</p>
+        <p>{issuedRequestTile}</p>
         <h6 className='show-header-text'>{user.first_name}'s Borrowed / Checked Out Tools {requestTiles}</h6>
         {/* <p>{user.borrowed_tools}</p> */}
         
