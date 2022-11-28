@@ -38,17 +38,17 @@ const UserShow = (props)=> {
   }, [])
 
   const getRequests = async () => {
-debugger
+// debugger
     try{
-      const response = await fetch(`/api/v1/tools/${tool.id}/requests`)
+      const response = await fetch(`/api/v1/tools/tool_id/requests`)
       if (!response.ok) {
-debugger
+// debugger
         const errorMessage = `${response.status} (${response.statusText})`
         const error = new Error(errorMessage)
         throw(error)
       }
       const responseBody = await response.json()
-debugger
+// debugger
       setRequests(responseBody.requests)
       } catch(err) {
         console.error(`Error in fetch: ${err.message}`)
@@ -96,6 +96,7 @@ debugger
         image_url={tool.image_url}
         product={tool.product}
         description={tool.description}
+        issued_requests={tool.issued_requests}
       />
     )
   })
@@ -106,9 +107,9 @@ debugger
       <RequestTile 
         key={request.id}
         id={request.id}
-        tool={request.tool_id}
-        owner={request.owner_id}
-        borrower={request.borrower_id}
+        tool={request.tool.name}
+        owner={request.owner.first_name}
+        borrower={request.borrower.first_name}
       />
     )
   })
@@ -117,9 +118,9 @@ debugger
     <div className="grid-x profile-container">
       <div className='cell large-auto left-column'>
         <h6 className='show-header-text'>Received Pending Requests for {user.first_name}'s Tools</h6>
-        {/* <p>{user.received_requests}</p> */}
+        <p>{props.received_requests}</p>
         <h6 className='show-header-text'>{user.first_name}'s Requests to Borrow Tools</h6>
-        {/* <p>{user.issued_requests}</p> */}
+        <p>{props.issued_requests}</p>
         <h6 className='show-header-text'>{user.first_name}'s Borrowed / Checked Out Tools {requestTiles}</h6>
         {/* <p>{user.borrowed_tools}</p> */}
         
