@@ -109,21 +109,22 @@ debugger
         key={issue.id}
         id={issue.id}
         tool_name={issue.tool.name}
-        owner={issue.owner_id}
+        tool_product={issue.tool.product}
+        // owner={issue.owner_id}
       />
     )
   })
 
-  const receivedRequestTile = user.received_requests.map((receivedItem) => {
-    return (
-      <ReceivedRequestTile
-        key={receivedItem.id}
-        id={receivedItem.id}
-        tool_id={receivedItem.tool_id}
-        borrower_id={receivedItem.borrower_id}
-      />
-    )
-  })
+  // const receivedRequestTile = user.received_requests.map((receivedItem) => {
+  //   return (
+  //     <ReceivedRequestTile
+  //       key={receivedItem.id}
+  //       id={receivedItem.id}
+  //       tool_id={receivedItem.tool_id}
+  //       borrower_id={receivedItem.borrower_id}
+  //     />
+  //   )
+  // })
 
   const requestTiles = requests.map ((request) => {
 // debugger
@@ -142,7 +143,7 @@ debugger
     <div className="grid-x profile-container">
       <div className='cell large-auto left-column'>
         <h6 className='show-header-text'>Received Pending Requests for {user.first_name}'s Tools</h6>
-        <p>{receivedRequestTile}</p>
+        {/* <p>{receivedRequestTile}</p> */}
         <h6 className='show-header-text'>{user.first_name}'s Requests to Borrow Tools</h6>
         <p>{issuedRequestTile}</p>
         <h6 className='show-header-text'>{user.first_name}'s Borrowed / Checked Out Tools {requestTiles}</h6>

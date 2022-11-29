@@ -4,9 +4,11 @@ const IssuedRequestTile = (props) => {
   
   return (
     <div className='callout'>
-      Tool: {props.tool_id}
+      Tool: {props.tool_name}
       <br/>
-      Owner: {props.owner_id}
+      {props.tool_product}
+      
+      {/* Owner: {props.owner_id} */}
     </div>
   )
 }
