@@ -51,8 +51,8 @@ tool_1 = Tool.find_or_create_by(
   size: "4 inches",
   weight: "1/4 lb",
   description: "The best screwdriver to get simple tasks done around the house.",
-  user_id: 1,
-  borrower_id: 3,
+  user: user_1,
+  borrower_id: user_3.id,
   available: true
 )
 
@@ -65,8 +65,8 @@ tool_2 = Tool.find_or_create_by(
   size: "5 inches x 16 inches",
   weight: "19 oz",
   description: "This hammer has a wood handle and a magnetic head. It also has a milled face and a magnetic nail set.",
-  user_id: 1,
-  borrower_id: 2,
+  user: user_1,
+  borrower_id: user_2.id,
   available: true
 )
 
@@ -79,8 +79,8 @@ tool_3 = Tool.find_or_create_by(
   size: "variety",
   weight: "19 oz",
   description: "This is a set of Crescent wrenches to help with any household tasks. The sizes are 6,8,10 inches.",
-  user_id: 3,
-  borrower_id: 1,
+  user: user_3,
+  borrower_id: user_1.id,
   available: true
 )
 
@@ -97,41 +97,43 @@ request_2 = Request.create(
 )
 
 request_3 = Request.create(
-  owner_id: 1,
-  tool_id: 1,
-  borrower_id: 2
+  owner_id: user_1.id,
+  tool_id: user_1.id,
+  borrower_id: user_2.id
 )
 
-request_4 = Request.create(
-  owner_id: 4,
-  tool_id: 3,
-  borrower_id: 5
-)
+# request_4 = Request.create(
+#   owner_id: 4,
+#   tool_id: 3,
+#   borrower_id: 5
+# )
 
-request_5 = Request.create(
-  owner_id: 5,
-  tool_id: 8,
-  borrower_id: 6
-)
+# request_5 = Request.create(
+#   owner_id: 5,
+#   tool_id: 8,
+#   borrower_id: 6
+# )
 
-request_6 = Request.create(
-  owner_id: 6,
-  tool_id: 11,
-  borrower_id: 5
-)
+# request_6 = Request.create(
+#   owner_id: 6,
+#   tool_id: 11,
+#   borrower_id: 5
+# )
 
-request_7 = Request.create(
-  owner_id: 4,
-  tool_id: 4,
-  borrower_id: 1
-)
+# request_7 = Request.create(
+#   owner_id: 4,
+#   tool_id: 4,
+#   borrower_id: 1
+# )
 
-Request.create(
-  owner_id: 4,
-  tool_id: 4,
-  borrower_id: 1
-)
+# Request.create(
+#   owner_id: 4,
+#   tool_id: 4,
+#   borrower_id: 1
+# )
 
 
-
+puts "#{User.count} number of Users created"
+puts "#{Tool.count} number of Tools created"
+puts "#{Request.count} number of Requests created"
 

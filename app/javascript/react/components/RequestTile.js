@@ -1,7 +1,6 @@
 import React from 'react';
 
 const RequestTile = (props) => {
-  
 // debugger
   return (
     <div>

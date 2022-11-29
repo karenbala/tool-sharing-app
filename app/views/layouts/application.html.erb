@@ -16,20 +16,24 @@
 <body>
   
   <!-- mobile nav bar -->
-<div class="title-bar topbar-center-logo-mobile" data-responsive-toggle="topbar-center-logo" data-hide-for="medium">
+<div class="title-bar top-bar-center-logo-mobile" data-responsive-toggle="top-bar-center-logo" data-hide-for="medium">
   <div class="title-bar-left">
-    <div class="title-bar-title"><img src="https://placehold.it/100x39" alt="" /></div>
+    <div class="title-bar-title">
+      <a href="/"><img src="<%= asset_path("tuulbox-logo-v6.png") %>"></a>
+    </div>
   </div>
   <div class="title-bar-right">
-    <button class="menu-icon" type="button" data-toggle="topbar-center-logo"></button>
+    <button class="menu-icon" type="button" data-toggle="top-bar-center-logo"></button>
   </div>
 </div>
 <!-- /mobile nav bar -->
 
 <!-- medium and larger nav bar -->
-<div class="top-bar topbar-center-logo" id="topbar-center-logo">
+<div class="top-bar top-bar-center-logo" id="top-bar-center-logo">
   <div class="top-bar-left">
-    
+    <ul class="menu vertical medium-horizontal">
+      <li class="top-bar-left-text">XXXXXXXXXXXXXXXXX</li>
+    </ul>
   </div>
   <div class="top-bar-center">
     <a href="/"><img src="<%= asset_path("tuulbox-logo-v6.png") %>"></a>
@@ -39,22 +43,21 @@
     <ul class="menu vertical medium-horizontal">
        <%- if current_user -%>
             <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
-            <li><a href="/users/<%= current_user.id %>">Mighty Profile</a></li>
+            <li><a href="/users/<%= current_user.id %>">My Profile</a></li>
         <%- else -%>
-            <%= link_to 'Create Account', new_user_registration_path %>
+            <%= link_to 'Sign Up', new_user_registration_path %>
             <%= link_to 'Log In', new_user_session_path %>
         <%- end -%>
     </ul>
   </div>
 </div>
 <!-- /medium and larger nav bar -->
-  
-  
-   
 
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
-      <%= value %>
+      <div class="flash flash-alert">
+        <h5><%= value %></h5>
+      </div>
     </div>
   <%- end -%>
   <div class="body-content">
@@ -75,7 +78,7 @@
 
 <footer>
   <div class="footer">
-    <p class="footer-content">Open to share tools</p>
+    <p class="footer-content">Open to Share Tools</p>
   </div>
 </footer>
 </html>
