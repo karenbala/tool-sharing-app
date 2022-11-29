@@ -5,6 +5,7 @@ import SearchBar from "./SearchBar.js"
 
 const ToolsIndexContainer = (props) => {
   const [tools, setTools] = useState([])
+
   
   const getTools = async () => {
     try {
@@ -16,10 +17,10 @@ const ToolsIndexContainer = (props) => {
       }
       const responseBody = await response.json()
       setTools(responseBody.tools)
-    } catch(err) {
-      console.error(`Error in fetch: ${err.message}`)
+      } catch(err) {
+        console.error(`Error in fetch: ${err.message}`)
+      }
     }
-  }
   useEffect(() => {
     getTools()
   }, [])
@@ -33,7 +34,9 @@ const ToolsIndexContainer = (props) => {
         image_url={tool.image_url}
         product={tool.product}
         description={tool.description}
-        user={tool.user.first_name}
+        first_name={tool.user.first_name}
+        last_name={tool.user.last_name}
+        current_user={tool.current_user}
       />
     )
   })
@@ -52,7 +55,7 @@ const ToolsIndexContainer = (props) => {
       </div>
        
       <h5>Available Tools</h5>
-      <div>
+      <div className="grid-x">
         {toolTiles}
       </div>
       

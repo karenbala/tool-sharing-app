@@ -2,18 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom"
 
 const ToolTile = (props) => {
-// debugger
   
   return (
     
-    <div>
+    <div className="card-container" >
       <Link to={`/tools/${props.id}`}>
-      <div>
-          <img src={props.image_url} alt={`image of ${props.name}`} />
+        <div className="card-tool-user-img" >
+            <img src={props.image_url} alt={`image of ${props.name}`} className="tool-user-image" />
         </div>
         <p>{props.name} : {props.product}</p>
-        <p>{props.user}{props.borrower_id}</p>
+        <p>{props.first_name} {props.last_name}</p>
       </Link>
+
     </div>
   )
 }
