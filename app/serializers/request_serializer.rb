@@ -1,5 +1,5 @@
 class RequestSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :owner_id
   # attributes :id, :tool_id, :owner_id, :borrower_id
 
   belongs_to :tool

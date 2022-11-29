@@ -7,9 +7,7 @@ import IssuedRequestTile from './IssuedRequestTile.js'
 import ReceivedRequestTile from './ReceivedRequestTile.js'
 
 const UserShow = (props)=> {
-// debugger
   const userId = props.match.params.userId
-  const [requests, setRequests] = useState ([])
 
   const [user, setUser] = useState ({
     tools: [],
@@ -19,10 +17,8 @@ const UserShow = (props)=> {
   })
 
   const getUser = async () => {
-// debugger
     try{
       const response = await fetch(`/api/v1/users/${userId}`)
-// debugger
       if (!response.ok) {
         const errorMessage = `${response.status} (${response.statusText})`
         const error = new Error(errorMessage)
@@ -30,7 +26,6 @@ const UserShow = (props)=> {
       }
       const fetchedUser = await response.json()
       setUser(fetchedUser.user)
-// debugger
     } catch(err) {
       console.error(`Error in fetch: ${err.message}`)
     }
@@ -39,26 +34,6 @@ const UserShow = (props)=> {
     getUser()
   }, [])
 
-  const getRequests = async () => {
-// debugger
-    try{
-      const response = await fetch(`/api/v1/tools/tool_id/requests`)
-      if (!response.ok) {
-// debugger
-        const errorMessage = `${response.status} (${response.statusText})`
-        const error = new Error(errorMessage)
-        throw(error)
-      }
-      const responseBody = await response.json()
-// debugger
-      setRequests(responseBody.requests)
-      } catch(err) {
-        console.error(`Error in fetch: ${err.message}`)
-      }
-    }
-  useEffect(() => {
-    getRequests()
-  }, [])
 
   const postNewTool = async(formPayLoad) => {
     
@@ -89,7 +64,6 @@ const UserShow = (props)=> {
   }
   
   const toolTiles = user.tools.map((tool) => {
-// debugger
     return(
       <ToolTile
         key={tool.id}
@@ -103,51 +77,40 @@ const UserShow = (props)=> {
   })
 
   const issuedRequestTile = user.issued_requests.map((issue) => {
-debugger
     return(
       <IssuedRequestTile
         key={issue.id}
         id={issue.id}
         tool_name={issue.tool.name}
         tool_product={issue.tool.product}
-        // owner={issue.owner_id}
+        tool_owner_first_name={issue.owner.first_name}
+        tool_owner_last_name={issue.owner.last_name}
       />
     )
   })
 
-  // const receivedRequestTile = user.received_requests.map((receivedItem) => {
-  //   return (
-  //     <ReceivedRequestTile
-  //       key={receivedItem.id}
-  //       id={receivedItem.id}
-  //       tool_id={receivedItem.tool_id}
-  //       borrower_id={receivedItem.borrower_id}
-  //     />
-  //   )
-  // })
-
-  const requestTiles = requests.map ((request) => {
-// debugger
-    return(
-      <RequestTile 
-        key={request.id}
-        id={request.id}
-        tool={request.tool.name}
-        owner={request.owner.first_name}
-        borrower={request.borrower.first_name}
+  const receivedRequestTile = user.received_requests.map((receivedItem) => {
+    return (
+      <ReceivedRequestTile
+        key={receivedItem.id}
+        id={receivedItem.id}
+        received_tool_name={receivedItem.tool.name}
+        received_tool_product={receivedItem.tool.product}
+        received_tool_owner_first_name={receivedItem.owner.first_name}
+        received_tool_owner_last_name={receivedItem.owner.last_name}
       />
     )
   })
+
 
   return(
     <div className="grid-x profile-container">
       <div className='cell large-auto left-column'>
         <h6 className='show-header-text'>Received Pending Requests for {user.first_name}'s Tools</h6>
-        {/* <p>{receivedRequestTile}</p> */}
+        {receivedRequestTile}
         <h6 className='show-header-text'>{user.first_name}'s Requests to Borrow Tools</h6>
-        <p>{issuedRequestTile}</p>
-        <h6 className='show-header-text'>{user.first_name}'s Borrowed / Checked Out Tools {requestTiles}</h6>
-        {/* <p>{user.borrowed_tools}</p> */}
+        {issuedRequestTile}
+        <h6 className='show-header-text'>{user.first_name}'s Borrowed / Checked Out Tools</h6>
         
       </div>
       <div className='cell large-auto right-column'>
