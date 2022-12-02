@@ -54,12 +54,13 @@ const ToolsIndexContainer = (props) => {
       <div className="available-section">
         <h5>Available Tools to Borrow</h5>
       </div>
+
       <div className="grid-container" >
         <div className="grid-x">
-        {toolTiles}
-        </div>
-
+        {toolTiles}</div>
       </div>
+      
+      <div class="footer-img"></div>
       
     </div>
   )

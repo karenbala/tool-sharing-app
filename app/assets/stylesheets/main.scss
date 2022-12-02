@@ -177,13 +177,13 @@ blockquote {
 .card-name-text {
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 1px;
 }
 
 .card-product-text {
   font-size: .875rem;
   font-weight: 300;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .card-owner-text {
@@ -540,5 +540,13 @@ blockquote {
   font-style: italic;
   margin-bottom: 0px;
   padding: 1.5%;
+  text-align: center;
+}
+
+.footer-img {
+  filter:brightness(75%);
+  background: url('https://static.wixstatic.com/media/cc4c1e_6d934633e58c4657b0c8b42996373455~mv2.jpg/v1/fill/w_740,h_493,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/cc4c1e_6d934633e58c4657b0c8b42996373455~mv2.jpg') 50% no-repeat;
+  background-size: cover;
+  height: 35vh;
   text-align: center;
 }
