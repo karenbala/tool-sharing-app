@@ -42,6 +42,8 @@ h6 {
 }
 
 body {
+  width: 100%;
+  min-height: 100vh;
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -49,9 +51,15 @@ body {
   color: black;
 }
 
+.available-section h5 {
+  margin-top: 4%;
+  margin-left: 4%;
+  margin-bottom: 4%;
+  font-weight: 600;
+}
 .body-content {
   margin: 1%;
-  background-color: #F2F2F2;
+  background-color: white;
 }
 
 .button {
@@ -90,15 +98,6 @@ blockquote {
   vertical-align: text-top;
 }
 
-.hero-text {
-  color: #A60303;
-  font-style: italic;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .show-container {
   background-color: white;
 }
@@ -121,7 +120,78 @@ blockquote {
   padding-top: 1.5rem;
 }
 
-// Tool Show Page Section
+.basic-card {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 1rem;
+  background: #fefefe;
+  box-shadow: none;
+  overflow: hidden;
+  color: #0a0a0a;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+  margin: 1%;
+  height: 375px;
+  // width: 50%;
+}
+
+.basic-card > :last-child {
+  margin-bottom: 0;
+}
+
+.basic-card-image {
+  grid-row-end: 4;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+}
+
+.basic-card-image img {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background-position: center;
+  object-fit: cover;
+  
+}
+
+.basic-card-content {
+  border: 0;
+  grid-row-start: 3 / 4;
+  margin: 0;
+  overflow: scroll;
+}
+
+.callout.secondary {
+  background-color: white;
+  color: black;
+}
+
+.card-name-text {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.card-product-text {
+  font-size: .875rem;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+
+.card-owner-text {
+  font-size: .75rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color:#A60303
+}
 
 .card-container {
   margin: 2rem 4rem;
@@ -176,39 +246,49 @@ blockquote {
 }
 
 .hero-img {
-  filter:brightness(90%);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   position: relative;
 }
-.hero-text {
+
+.hero-section {
+  filter:brightness(80%);
+  background: url('https://www.ikea.com/images/a-person-seated-at-a-white-lagkapten-adils-desk-below-a-bunk-1e51cae5449bc30981d4cce9e4ce91f4.jpg?f=sg') 50% no-repeat;
+  background-size: cover;
+  height: 60vh;
+  text-align: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.hero-section .hero-section-text h2 {
   color: #A60303;
   font-style: italic;
   font-size: 5vw;
   font-weight: 600;
-  position: absolute;
-  top: 38%;
-  left: 36%;
-  transform: translate(-50%, -50%);
+  margin-bottom: 200px;
 }
 
-.search-group-rounded {
-  position: absolute;
+.hero-section .search-group-rounded {
   display: flex;
   flex-direction: row;
-  top: 80%;
-  left: 30%;
 }
-.search-group-rounded .search-group-field {
+
+.hero-section .search-group-rounded .search-group-field {
   border-radius: 5000px 0 0 5000px;
   padding-left: 1rem;
-  width: 500px;
   text-align: center;
 }
 
-.search-group-rounded .search-group-button .button {
+.hero-section .search-group-rounded .search-group-button .button {
   border-radius: 0 5000px 5000px 0;
   font-size: 1rem;
   background-color: #03178C;
@@ -217,7 +297,6 @@ blockquote {
   display: inline-block;
   vertical-align: middle;
 }
-
 
 @media screen and (max-width: 39.9375em) {
   .top-bar-center-logo .top-bar-center {

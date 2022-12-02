@@ -38,8 +38,8 @@ const SearchBar = (props) => {
   }
 
   return(
-    <div>
-        <form onSubmit={handleSubmit}>
+    
+        <form className='hero-section-text' onSubmit={handleSubmit}>
       <div className="search-group search-group-rounded">
               <input class="search-group-field" 
                 type='text' 
@@ -52,7 +52,7 @@ const SearchBar = (props) => {
             </div>
       </div>
         </form>
-    </div>
+    
   )
 }
 
