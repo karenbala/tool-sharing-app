@@ -43,21 +43,24 @@ const ToolsIndexContainer = (props) => {
 
   return (
     <div>
-      <div className="hero-container">
-          <img className="hero-img" src='https://www.ikea.com/images/a-person-seated-at-a-white-lagkapten-adils-desk-below-a-bunk-1e51cae5449bc30981d4cce9e4ce91f4.jpg?f=sg' />
-          <div>
-            <h2 className='hero-text'>Share tools and build spaces</h2>
-          </div>
-          <div className="search-bar">
-            <SearchBar
-              setTools={setTools} />
+      <div className="hero-section">
+          <div className='hero-section-text'>
+            <h2>Share tools and build spaces</h2>
+              <SearchBar
+                setTools={setTools} />
           </div>
       </div>
-       
-      <h5>Available Tools</h5>
-      <div className="grid-x">
-        {toolTiles}
+
+      <div className="available-section">
+        <h5>Available Tools to Borrow</h5>
       </div>
+
+      <div className="grid-container" >
+        <div className="grid-x">
+        {toolTiles}</div>
+      </div>
+      
+      <div class="footer-img"></div>
       
     </div>
   )

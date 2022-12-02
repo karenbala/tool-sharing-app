@@ -4,17 +4,20 @@ import { Link } from "react-router-dom"
 const ToolTile = (props) => {
   
   return (
-    
-    <div className="card-container" >
+  <div className="cell small-12 medium-4 large-3">
+    <div className="basic-card" >
       <Link to={`/tools/${props.id}`}>
-        <div className="card-tool-user-img" >
-            <img src={props.image_url} alt={`image of ${props.name}`} className="tool-user-image" />
+        <div className="basic-card-image" >
+            <img src={props.image_url} alt={`image of ${props.name}`} />
         </div>
-        <p>{props.name} : {props.product}</p>
-        <p>{props.first_name} {props.last_name}</p>
+        <div className="basic-card-content content callout secondary">
+          <p className="card-name-text">{props.name}</p>
+          <p className="card-product-text">{props.product}</p>
+          <p className="card-owner-text">{props.first_name} {props.last_name}</p>
+        </div>
       </Link>
-
     </div>
+  </div>
   )
 }
 
