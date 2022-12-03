@@ -121,10 +121,18 @@ const UserShow = (props)=> {
               </div>
             </div>
           </div>
+          <div className='people-you-might-know'>
+            <div className='add-people-header'>
+              <p className='header-title'>{user.first_name}'s Requests to Borrow Tools</p>
+            </div>
+            <div className="row add-people-section">
+              <div className="small-12 medium-6 columns">
+                {issuedRequestTile}
+              </div>
+            </div>
 
-          <h6 className=''>{user.first_name}'s Requests to Borrow Tools</h6>
-          {issuedRequestTile}
-          <h6 className=''>{user.first_name}'s Borrowed / Checked Out Tools</h6>
+              <h6 className=''>{user.first_name}'s Borrowed / Checked Out Tools</h6>
+          </div>
           
         </div>
 

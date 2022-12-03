@@ -336,6 +336,31 @@ blockquote {
   font-size: 0.85em;
 }
 
+.people-you-might-know .add-people-section .approve-request {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .people-you-might-know .add-people-section .approve-request {
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+.people-you-might-know .add-people-section .add-friend .approve-request-action {
+  margin-top: 0.7rem;
+}
+
+
 .profile-container {
   background-color: #03178C;
 }
