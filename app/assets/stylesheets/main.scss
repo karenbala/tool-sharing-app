@@ -279,6 +279,7 @@ blockquote {
   padding: 1rem 0 0;
   border: 1px solid #cacaca;
   box-shadow: 0 0 3.125rem rgba(0, 0, 0, 0.18);
+  margin: 1% 10% 1% 10%;
 }
 
 .people-you-might-know .add-people-header {
@@ -293,8 +294,7 @@ blockquote {
 
 .people-you-might-know .add-people-section {
   margin: 1rem 0 0;
-  padding-bottom: 1rem;
-  border-bottom: 0.0625rem solid #cacaca;
+  padding: 3%;
 }
 
 .people-you-might-know .add-people-section .about-people {
@@ -304,6 +304,9 @@ blockquote {
   -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start;
+  margin-bottom: 3%;
+  border-bottom: 0.0625rem solid #cacaca;
+  
 }
 
 .people-you-might-know .add-people-section .about-people .about-people-profile {
@@ -322,24 +325,27 @@ blockquote {
   -webkit-flex: 1 0 0;
       -ms-flex: 1 0 0px;
           flex: 1 0 0;
+  text-align: left;
 }
 
 .people-you-might-know .add-people-section .about-people .about-people-borrower .borrower-name {
   color: #0a0a0a;
   margin: 0.375rem 0 0;
+  font-size: .813rem;
 }
 
 .people-you-might-know .add-people-section .about-people .about-people-borrower .borrower-location,
 .people-you-might-know .add-people-section .about-people .about-people-borrower .owner-tool {
   color: #8a8a8a;
   margin-bottom: 0;
-  font-size: 0.85em;
+  font-size: 0.813rem;
 }
 
 .people-you-might-know .add-people-section .approve-request {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 8%;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
@@ -356,8 +362,13 @@ blockquote {
   }
 }
 
-.people-you-might-know .add-people-section .add-friend .approve-request-action {
-  margin-top: 0.7rem;
+.people-you-might-know .add-people-section .approve-request-action .button.primary {
+  margin-right: 2px;
+  border-radius: ;
+}
+
+.people-you-might-know .add-people-section .approve-request-action .button.secondary {
+  margin-left: 2px;
 }
 
 
