@@ -130,9 +130,9 @@ const UserShow = (props)=> {
                 {issuedRequestTile}
               </div>
             </div>
+          </div>
 
               <h6 className=''>{user.first_name}'s Borrowed / Checked Out Tools</h6>
-          </div>
           
         </div>
 

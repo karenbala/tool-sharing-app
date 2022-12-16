@@ -279,7 +279,8 @@ blockquote {
   padding: 1rem 0 0;
   border: 1px solid #cacaca;
   box-shadow: 0 0 3.125rem rgba(0, 0, 0, 0.18);
-  margin: 1% 10% 1% 10%;
+  margin: 1% 1% 1% 10%;
+  border-radius: .5rem;
 }
 
 .people-you-might-know .add-people-header {
@@ -306,7 +307,7 @@ blockquote {
           align-items: flex-start;
   margin-bottom: 3%;
   border-bottom: 0.0625rem solid #cacaca;
-  
+  padding-bottom: 3%;
 }
 
 .people-you-might-know .add-people-section .about-people .about-people-profile {
@@ -321,21 +322,22 @@ blockquote {
   border: 0.0625rem solid #cacaca;
 }
 
-.people-you-might-know .add-people-section .about-people .about-people-borrower {
+.people-you-might-know .add-people-section .about-people .about-people-borrower-lender {
   -webkit-flex: 1 0 0;
       -ms-flex: 1 0 0px;
           flex: 1 0 0;
   text-align: left;
 }
 
-.people-you-might-know .add-people-section .about-people .about-people-borrower .borrower-name {
+
+.people-you-might-know .add-people-section .about-people .about-people-borrower-lender .borrower-lender-name {
   color: #0a0a0a;
   margin: 0.375rem 0 0;
   font-size: .813rem;
 }
 
-.people-you-might-know .add-people-section .about-people .about-people-borrower .borrower-location,
-.people-you-might-know .add-people-section .about-people .about-people-borrower .owner-tool {
+.people-you-might-know .add-people-section .about-people .about-people-borrower-lender .borrower-location,
+.people-you-might-know .add-people-section .about-people .about-people-borrower-lender .owner-tool {
   color: #8a8a8a;
   margin-bottom: 0;
   font-size: 0.813rem;
@@ -363,12 +365,20 @@ blockquote {
 }
 
 .people-you-might-know .add-people-section .approve-request-action .button.primary {
-  margin-right: 2px;
-  border-radius: ;
+  margin-right: 4px;
+  border-radius: 5000px;
+  background-color: #03178C;
+}
+
+.people-you-might-know .add-people-section .approve-request-action .button.primary:hover {
+  background-color: #F2CB05;
 }
 
 .people-you-might-know .add-people-section .approve-request-action .button.secondary {
-  margin-left: 2px;
+  margin-left: 4px;
+  border-radius: 5000px;
+  
+
 }
 
 
