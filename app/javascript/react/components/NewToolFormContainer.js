@@ -59,15 +59,15 @@ const NewToolFormContainer = (props) => {
 
 
   return (
-  <div class="new-tool-form">
-    <h5 class="text-center">Add a Tool</h5>
+  <div className="new-tool-form">
+    <h5 className="text-center">Add a Tool</h5>
 
     <form onSubmit={handleSubmit}>
       <div className="grid-container">
         <div className="grid-x grid-padding-x">
           <div className="large-12 cell">
-            <div class="sign-up-field">
-              <label class="new-tool-label">Power Type
+            <div className="sign-up-field">
+              <label className="new-tool-label">Power Type
               <input 
                   name="power_type"
                   id="power_type"
@@ -79,8 +79,8 @@ const NewToolFormContainer = (props) => {
               </label>
             </div>
 
-            <div class="sign-up-field">
-              <label class="new-tool-label">Tool Name
+            <div className="sign-up-field">
+              <label className="new-tool-label">Tool Name
                 <input 
                   name="name"
                   id="name"
@@ -92,8 +92,8 @@ const NewToolFormContainer = (props) => {
               </label>
             </div>
 
-            <div class="sign-up-field">
-              <label class="new-tool-label">Tool Image
+            <div className="sign-up-field">
+              <label className="new-tool-label">Tool Image
                 <input 
                   name="image_url"
                   id="image_url"
@@ -105,8 +105,8 @@ const NewToolFormContainer = (props) => {
               </label>
             </div>
 
-            <div class="sign-up-field">
-              <label class="new-tool-label">Tool Category
+            <div className="sign-up-field">
+              <label className="new-tool-label">Tool Category
                 <input 
                   name="product"
                   id="product"
@@ -118,8 +118,8 @@ const NewToolFormContainer = (props) => {
               </label>
             </div>
 
-            <div class="sign-up-field">
-              <label class="new-tool-label">Tool Brand
+            <div className="sign-up-field">
+              <label className="new-tool-label">Tool Brand
                 <input 
                   name="brand"
                   id="brand"
@@ -131,8 +131,8 @@ const NewToolFormContainer = (props) => {
               </label>
             </div>
 
-            <div class="sign-up-field">
-              <label class="new-tool-label">Tool Size
+            <div className="sign-up-field">
+              <label className="new-tool-label">Tool Size
                 <input 
                   name="size"
                   id="size"
@@ -144,8 +144,8 @@ const NewToolFormContainer = (props) => {
               </label>
             </div>
 
-            <div class="sign-up-field">
-              <label class="new-tool-label">Tool Weight
+            <div className="sign-up-field">
+              <label className="new-tool-label">Tool Weight
                 <input 
                   name="weight"
                   id="weight"
@@ -157,8 +157,8 @@ const NewToolFormContainer = (props) => {
               </label>
             </div>
 
-            <div class="sign-up-field">
-              <label class="new-tool-label">Tool's Description
+            <div className="sign-up-field">
+              <label className="new-tool-label">Tool's Description
                 <input 
                   name="description"
                   id="description"
@@ -170,8 +170,8 @@ const NewToolFormContainer = (props) => {
               </label>
             </div>
 
-            <div class="sign-up-field">
-              <label class="new-tool-label">Available
+            <div className="sign-up-field">
+              <label className="new-tool-label">Available
               <input 
                   name="available"
                   id="available"
@@ -182,8 +182,8 @@ const NewToolFormContainer = (props) => {
                 />
               </label>
             </div>
-            <div class="new-tool-button">
-              <a><button class="sign-up-text">Add Tool</button></a>
+            <div className="new-tool-button">
+              <a><button className="sign-up-text">Add Tool</button></a>
             </div>
           </div>
         </div>

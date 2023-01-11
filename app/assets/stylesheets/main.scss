@@ -42,8 +42,6 @@ h6 {
 }
 
 body {
-  width: 100%;
-  min-height: 100vh;
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -51,15 +49,9 @@ body {
   color: black;
 }
 
-.available-section h5 {
-  margin-top: 4%;
-  margin-left: 4%;
-  margin-bottom: 4%;
-  font-weight: 600;
-}
 .body-content {
   margin: 1%;
-  background-color: white;
+  background-color: #F2F2F2;
 }
 
 .button {
@@ -98,6 +90,15 @@ blockquote {
   vertical-align: text-top;
 }
 
+.hero-text {
+  color: #A60303;
+  font-style: italic;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .show-container {
   background-color: white;
 }
@@ -116,82 +117,8 @@ blockquote {
   border-bottom-right-radius: 5%;
 }
 
-.show-header-text {
-  padding-top: 1.5rem;
-}
 
-.basic-card {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-bottom: 1rem;
-  background: #fefefe;
-  box-shadow: none;
-  overflow: hidden;
-  color: #0a0a0a;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
-  margin: 1%;
-  height: 375px;
-  // width: 50%;
-}
-
-.basic-card > :last-child {
-  margin-bottom: 0;
-}
-
-.basic-card-image {
-  grid-row-end: 4;
-  -ms-grid-row: 1;
-      grid-row-start: 1;
-}
-
-.basic-card-image img {
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-  background-position: center;
-  object-fit: cover;
-  
-}
-
-.basic-card-content {
-  border: 0;
-  grid-row-start: 3 / 4;
-  margin: 0;
-  overflow: scroll;
-}
-
-.callout.secondary {
-  background-color: white;
-  color: black;
-}
-
-.card-name-text {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 1px;
-}
-
-.card-product-text {
-  font-size: .875rem;
-  font-weight: 300;
-  margin-bottom: 4px;
-}
-
-.card-owner-text {
-  font-size: .75rem;
-  font-weight: 600;
-  margin-bottom: 16px;
-  color:#A60303
-}
+// Tool Show Page Section
 
 .card-container {
   margin: 2rem 4rem;
@@ -246,49 +173,39 @@ blockquote {
 }
 
 .hero-img {
+  filter:brightness(90%);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   position: relative;
 }
-
-.hero-section {
-  filter:brightness(80%);
-  background: url('https://www.ikea.com/images/a-person-seated-at-a-white-lagkapten-adils-desk-below-a-bunk-1e51cae5449bc30981d4cce9e4ce91f4.jpg?f=sg') 50% no-repeat;
-  background-size: cover;
-  height: 60vh;
-  text-align: center;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-.hero-section .hero-section-text h2 {
+.hero-text {
   color: #A60303;
   font-style: italic;
   font-size: 5vw;
   font-weight: 600;
-  margin-bottom: 200px;
+  position: absolute;
+  top: 38%;
+  left: 36%;
+  transform: translate(-50%, -50%);
 }
 
-.hero-section .search-group-rounded {
+.search-group-rounded {
+  position: absolute;
   display: flex;
   flex-direction: row;
+  top: 80%;
+  left: 30%;
 }
-
-.hero-section .search-group-rounded .search-group-field {
+.search-group-rounded .search-group-field {
   border-radius: 5000px 0 0 5000px;
   padding-left: 1rem;
+  width: 500px;
   text-align: center;
 }
 
-.hero-section .search-group-rounded .search-group-button .button {
+.search-group-rounded .search-group-button .button {
   border-radius: 0 5000px 5000px 0;
   font-size: 1rem;
   background-color: #03178C;
@@ -297,6 +214,7 @@ blockquote {
   display: inline-block;
   vertical-align: middle;
 }
+
 
 @media screen and (max-width: 39.9375em) {
   .top-bar-center-logo .top-bar-center {
@@ -356,6 +274,114 @@ blockquote {
   border-color: #F2CB05;
 }
 
+.people-you-might-know {
+  background-color: #fefefe;
+  padding: 1rem 0 0;
+  border: 1px solid #cacaca;
+  box-shadow: 0 0 3.125rem rgba(0, 0, 0, 0.18);
+  margin: 1% 1% 1% 10%;
+  border-radius: .5rem;
+}
+
+.people-you-might-know .add-people-header {
+  padding: 0 0.9375rem;
+  border-bottom: 0.0625rem solid #cacaca;
+}
+
+.people-you-might-know .add-people-header .header-title {
+  font-weight: bold;
+  text-align: left;
+}
+
+.people-you-might-know .add-people-section {
+  margin: 1rem 0 0;
+  padding: 3%;
+}
+
+.people-you-might-know .add-people-section .about-people {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 3%;
+  border-bottom: 0.0625rem solid #cacaca;
+  padding-bottom: 3%;
+}
+
+.people-you-might-know .add-people-section .about-people .about-people-profile {
+  padding-right: 0.5rem;
+  padding-left: 0;
+}
+
+.people-you-might-know .add-people-section .about-people .about-people-profile .profile-image {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 0.0625rem solid #cacaca;
+}
+
+.people-you-might-know .add-people-section .about-people .about-people-borrower-lender {
+  -webkit-flex: 1 0 0;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
+  text-align: left;
+}
+
+
+.people-you-might-know .add-people-section .about-people .about-people-borrower-lender .borrower-lender-name {
+  color: #0a0a0a;
+  margin: 0.375rem 0 0;
+  font-size: .813rem;
+}
+
+.people-you-might-know .add-people-section .about-people .about-people-borrower-lender .borrower-location,
+.people-you-might-know .add-people-section .about-people .about-people-borrower-lender .owner-tool {
+  color: #8a8a8a;
+  margin-bottom: 0;
+  font-size: 0.813rem;
+}
+
+.people-you-might-know .add-people-section .approve-request {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 8%;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .people-you-might-know .add-people-section .approve-request {
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+.people-you-might-know .add-people-section .approve-request-action .button.primary {
+  margin-right: 4px;
+  border-radius: 5000px;
+  background-color: #03178C;
+}
+
+.people-you-might-know .add-people-section .approve-request-action .button.primary:hover {
+  background-color: #F2CB05;
+}
+
+.people-you-might-know .add-people-section .approve-request-action .button.secondary {
+  margin-left: 4px;
+  border-radius: 5000px;
+  
+
+}
+
+
 .profile-container {
   background-color: #03178C;
 }
@@ -371,8 +397,17 @@ blockquote {
   background-color: white;
 }
 
+.show-header-container {
+  background-color: #03178C;
+  text-align: center;
+}
+
 .show-header-text {
-  padding-top: 1.5rem;
+  padding-top: 1.0rem;
+  padding-bottom: 1.0rem;
+  color: white;
+  font-weight: 600;
+  font-style: italic;
 }
 
 .sign-in {
@@ -540,13 +575,5 @@ blockquote {
   font-style: italic;
   margin-bottom: 0px;
   padding: 1.5%;
-  text-align: center;
-}
-
-.footer-img {
-  filter:brightness(75%);
-  background: url('https://static.wixstatic.com/media/cc4c1e_6d934633e58c4657b0c8b42996373455~mv2.jpg/v1/fill/w_740,h_493,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/cc4c1e_6d934633e58c4657b0c8b42996373455~mv2.jpg') 50% no-repeat;
-  background-size: cover;
-  height: 35vh;
   text-align: center;
 }

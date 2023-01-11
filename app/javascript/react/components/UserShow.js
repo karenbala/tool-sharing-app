@@ -104,29 +104,51 @@ const UserShow = (props)=> {
 
 
   return(
-    <div className="grid-x profile-container">
-      <div className='cell large-auto left-column'>
-        <h6 className='show-header-text'>Received Pending Requests for {user.first_name}'s Tools</h6>
-        {receivedRequestTile}
-        <h6 className='show-header-text'>{user.first_name}'s Requests to Borrow Tools</h6>
-        {issuedRequestTile}
-        <h6 className='show-header-text'>{user.first_name}'s Borrowed / Checked Out Tools</h6>
-        
+    <div>
+      <div className='show-header-container'>
+        <h5 className='show-header-text'>Hello {user.first_name}!</h5>
       </div>
-      <div className='cell large-auto right-column'>
-          <h4 className='show-header-text'>Hello {user.first_name}!</h4>
-          <div>
-            <UserTile
-            user = {user} 
-            />
+
+      <div className="grid-x">
+        <div className='cell large-auto left-column'>
+          <div className='people-you-might-know'>
+            <div className='add-people-header'>
+              <p className="header-title">Pending Requests for {user.first_name}'s Tools</p>
+            </div>
+            <div className="row add-people-section">
+              <div className="small-12 medium-6 columns">
+                {receivedRequestTile}
+              </div>
+            </div>
           </div>
-          <div>
-            <NewToolFormContainer
-              postNewTool = {postNewTool} />
+          <div className='people-you-might-know'>
+            <div className='add-people-header'>
+              <p className='header-title'>{user.first_name}'s Requests to Borrow Tools</p>
+            </div>
+            <div className="row add-people-section">
+              <div className="small-12 medium-6 columns">
+                {issuedRequestTile}
+              </div>
+            </div>
           </div>
 
-        <div className="card-container">
-          {toolTiles}
+              <h6 className=''>{user.first_name}'s Borrowed / Checked Out Tools</h6>
+          
+        </div>
+
+        <div className='cell large-auto right-column'>
+          <div>
+              <UserTile
+              user = {user} 
+              />
+          </div>
+          <div>
+              <NewToolFormContainer
+                postNewTool = {postNewTool} />
+          </div>
+          <div className="card-container">
+            {toolTiles}
+          </div>
         </div>
       </div>
     </div>
