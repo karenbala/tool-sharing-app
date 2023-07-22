@@ -12,14 +12,14 @@ const ReceivedRequestTile = (props) => {
         <p className="owner-tool"><strong>{props.received_tool_product}</strong> is being requested by {props.received_tool_owner_first_name} {props.received_tool_owner_last_name} </p>
       
 
-      <div class="small-12 medium-6 columns approve-request">
-        <div class="approve-request-action">
-            <button class="button primary small">
+      <div className="small-12 medium-6 columns approve-request">
+        <div className="approve-request-action">
+            <button className="button primary small">
               <i class="fa fa-check" aria-hidden="true"></i>
               Approve Request
             </button>
-            <button class="button secondary small">
-              <i class="fa fa-times" aria-hidden="true"></i>
+            <button className="button secondary small">
+              <i className="fa fa-times" aria-hidden="true"></i>
               Deny Request
             </button>
         </div>

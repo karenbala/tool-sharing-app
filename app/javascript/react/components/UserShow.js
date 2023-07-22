@@ -132,22 +132,30 @@ const UserShow = (props)=> {
             </div>
           </div>
 
-              <h6 className=''>{user.first_name}'s Borrowed / Checked Out Tools</h6>
           
         </div>
 
         <div className='cell large-auto right-column'>
-          <div>
-              <UserTile
-              user = {user} 
-              />
+          <div className='people-you-might-know-right'>
+            <div className='add-people-header-right'>
+              <p className='header-title-right'>{user.first_name}'s tuulbox</p>
+            </div>
+             <div className="row add-people-section-right">
+                <div className="small-12 medium-6 columns">
+                    <UserTile
+                    user = {user} 
+                    />
+                </div>
+            </div>
+          </div>
+              <h6 className=''>{user.first_name}'s Borrowed / Checked Out Tools</h6>
+{/* TODO: REWORK TOOLS TO HAVE A SIMILAR FORMAT AS LEFT-HAND SIDE OF PAGE */}
+          <div className="card-container">
+            {toolTiles}
           </div>
           <div>
               <NewToolFormContainer
                 postNewTool = {postNewTool} />
-          </div>
-          <div className="card-container">
-            {toolTiles}
           </div>
         </div>
       </div>

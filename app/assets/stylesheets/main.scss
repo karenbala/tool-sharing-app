@@ -121,7 +121,6 @@ blockquote {
 // Tool Show Page Section
 
 .card-container {
-  margin: 2rem 4rem;
   background-color: #fefefe;
   color: #0a0a0a;
   overflow: hidden;
@@ -130,10 +129,9 @@ blockquote {
 }
 .card-container .card-tool-user-img .tool-user-image {
   display: block;
-  margin: auto;
   border-radius: 0;
-  width: 11.875rem;
-  height: 11.875rem;
+  width: 9.375rem;
+  height: 9.375rem;
   padding-top: 1.5rem;
   padding-bottom: 0.9375rem;
   padding-left: 0.9375rem;
@@ -147,6 +145,11 @@ blockquote {
   padding-bottom: 3rem;
   text-align: left;
 }
+
+.card-container .tool-user-info .user-info-details {
+  list-style-type: none;
+}
+
 
 .card-container .card-user-button {
   text-align: center;
@@ -279,11 +282,25 @@ blockquote {
   padding: 1rem 0 0;
   border: 1px solid #cacaca;
   box-shadow: 0 0 3.125rem rgba(0, 0, 0, 0.18);
-  margin: 1% 1% 1% 10%;
+  margin: 1% .5% 1% 10%;
+  border-radius: .5rem;
+}
+
+.people-you-might-know-right{
+  background-color: #fefefe;
+  padding: 1rem 0 0;
+  border: 1px solid #cacaca;
+  box-shadow: 0 0 3.125rem rgba(0, 0, 0, 0.18);
+  margin: 1% 10% 1% .5%;
   border-radius: .5rem;
 }
 
 .people-you-might-know .add-people-header {
+  padding: 0 0.9375rem;
+  border-bottom: 0.0625rem solid #cacaca;
+}
+
+.people-you-might-know-right .add-people-header-right{
   padding: 0 0.9375rem;
   border-bottom: 0.0625rem solid #cacaca;
 }
@@ -293,10 +310,21 @@ blockquote {
   text-align: left;
 }
 
+.people-you-might-know-right .add-people-header-right .header-title-right {
+  font-weight: bold;
+  text-align: left;
+}
+
 .people-you-might-know .add-people-section {
   margin: 1rem 0 0;
   padding: 3%;
 }
+
+.people-you-might-know-right .add-people-section-right {
+  margin: 1rem 0 0;
+  padding: 3%;
+}
+
 
 .people-you-might-know .add-people-section .about-people {
   display: -webkit-flex;
