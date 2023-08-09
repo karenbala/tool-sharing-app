@@ -44,11 +44,13 @@ const ToolsIndexContainer = (props) => {
   return (
     <div>
       <div className="hero-section">
-          <div className='hero-section-text'>
-            <h2>Share tools and build spaces</h2>
-              <SearchBar
-                setTools={setTools} />
-          </div>
+          
+              <img className="hero-img" src='https://www.ikea.com/images/a-person-seated-at-a-white-lagkapten-adils-desk-below-a-bunk-1e51cae5449bc30981d4cce9e4ce91f4.jpg?f=sg' />
+            <div className='hero-section-text'>
+              <h2>Share tools and build spaces</h2>
+              </div>
+                <SearchBar
+                  setTools={setTools} />
       </div>
 
       <div className="available-section">
@@ -60,7 +62,6 @@ const ToolsIndexContainer = (props) => {
         {toolTiles}</div>
       </div>
       
-      <div class="footer-img"></div>
       
     </div>
   )

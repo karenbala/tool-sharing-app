@@ -90,14 +90,6 @@ blockquote {
   vertical-align: text-top;
 }
 
-.hero-text {
-  color: #A60303;
-  font-style: italic;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 .show-container {
   background-color: white;
@@ -183,11 +175,11 @@ blockquote {
   display: flex;
   position: relative;
 }
-.hero-text {
+
+.hero-section-text {
   color: #A60303;
   font-style: italic;
-  font-size: 5vw;
-  font-weight: 600;
+  
   position: absolute;
   top: 38%;
   left: 36%;

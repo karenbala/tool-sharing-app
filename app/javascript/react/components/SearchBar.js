@@ -47,7 +47,7 @@ const SearchBar = (props) => {
                 value={searchString}
                 onChange={handleChange}
               />
-            <div class="search-group-button">
+            <div className="search-group-button">
               <input className="button secondary" type='submit' value='Search Tools' />
             </div>
       </div>
