@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 const NewToolFormContainer = (props) => {
-// debugger  
   const [newToolData, setNewToolData] = useState ({
     power_type: '',
     name: '',
@@ -55,7 +54,6 @@ const NewToolFormContainer = (props) => {
       clearForm()
     }
   }
-  // debugger
 
 
   return (

@@ -16,7 +16,6 @@ class Api::V1::ToolsController < ApiController
     def create
       tool = Tool.new(tool_params)
       tool.user = current_user
-      # binding.pry
 
       if tool.save
         flash[:notice] = "New tool added successfully"

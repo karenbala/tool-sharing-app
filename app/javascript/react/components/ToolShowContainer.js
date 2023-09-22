@@ -17,7 +17,6 @@ const ToolShowContainer = (props) => {
           throw(error)
         }
         const fetchedTool = await response.json()
-        // debugger
         setTool(fetchedTool.tool)
         // setUser(fetchedTool.current_user)
       } catch(err) {

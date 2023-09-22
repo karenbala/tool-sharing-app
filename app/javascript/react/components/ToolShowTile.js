@@ -21,7 +21,6 @@ const ToolShowTile = (props) => {
   }, [request])
 
   const makeRequest = async () => {
-    // debugger
     const response = await fetch(`/api/v1/tools/${tool.id}/requests`, {
       method: "POST",
       credentials: 'same-origin',
@@ -40,7 +39,6 @@ const ToolShowTile = (props) => {
   }
 
   if (redirect === true){
-  // debugger
     return (
     <Redirect to={`/users/${tool.current_user.id}`} />);
     }
