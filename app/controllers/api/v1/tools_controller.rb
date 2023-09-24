@@ -9,7 +9,7 @@ class Api::V1::ToolsController < ApiController
     end
 
     def search
-      tools = Tool.where("name ILIKE ? OR product ILIKE ?", "%#{params[ 'search_string']}%", "%#{params[ 'search_string']}%")
+      tools = Tool.where("name ILIKE ? OR product ILIKE ?", "%#{params['search_string']}%", "%#{params[ 'search_string']}%")
       render json: tools
     end
 
