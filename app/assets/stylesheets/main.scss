@@ -213,10 +213,12 @@ blockquote {
   left: 30%;
 }
 .search-group-rounded .search-group-field {
-  border-radius: 5000px 0 0 5000px;
+  border-radius: 5000px 5000px 5000px 5000px;
   padding-left: 1rem;
   width: 500px;
   text-align: center;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
 }
 
 .search-group-rounded .search-group-button .button {

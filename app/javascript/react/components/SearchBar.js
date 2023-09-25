@@ -39,22 +39,18 @@ const SearchBar = (props) => {
 
   return(
 
-      <div>
-        <form className='hero-section' onSubmit={handleSubmit}>
-
+    <form className='hero-section' onSubmit={handleSubmit}>
+{/* TODO: MAKE SEARCH BAR RESPONSIVE TO SMALLER SCREENS */}
           <div className="search-group search-group-rounded">
                   <input class="search-group-field" 
-                    type='text' 
+                    type='search' 
+                    placeholder='Search Tools'
                     name='searchString'
                     value={searchString}
-                    onChange={handleChange} />
+                    onChange={handleChange} />  
           </div>
-          <div className="search-group-button">
-                  <input className="button secondary" type='submit' value='Search Tools' />
-          </div>
-          
-        </form>
-      </div>
+
+    </form>
     
   )
 }
