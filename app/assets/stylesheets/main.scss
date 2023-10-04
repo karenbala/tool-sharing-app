@@ -193,8 +193,8 @@ blockquote {
   font-style: italic;
   font-weight: 400;
   position: absolute;
-  top: 15%;
-  left: 3%;
+  top: 20%;
+  left: 20%;
   //transform: translate(-50%, -50%);
 }
 
@@ -209,9 +209,11 @@ blockquote {
   position: absolute;
   display: flex;
   flex-direction: row;
-  top: 80%;
-  left: 30%;
+  top: 45%;
+  left: 31%;
+  width: 38%;
 }
+  
 .search-group-rounded .search-group-field {
   border-radius: 5000px 5000px 5000px 5000px;
   padding-left: 1rem;
@@ -233,7 +235,7 @@ blockquote {
 
 
 @media screen and (max-width: 39.9375em) {
-  .top-bar-center-logo .top-bar-center {
+  .top-bar-center-logo .top-bar-center .search-group-rounded {
     display: none;
   }
 }
