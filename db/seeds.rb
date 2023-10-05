@@ -59,7 +59,7 @@ tool_1 = Tool.find_or_create_by(
 tool_2 = Tool.find_or_create_by(
   power_type: "Hand Tool",
   name: "Hammer",
-  image_url: "https://images.thdstatic.com/productImages/b42731ad-1c27-463d-b706-6c12ce1aa696/svn/milwaukee-framing-hammers-48-22-9419-4f_145.jpg",
+  image_url: "https://www.truevalue.com/media/catalog/product/208280.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700&dpr=2%202x",
   product: "Framing Hammer",
   brand: "Milwaukee",
   size: "5 inches x 16 inches",
